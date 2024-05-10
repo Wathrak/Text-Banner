@@ -33,6 +33,13 @@
     padding: 5px;
 }
 
+#btn-fullscreen {
+    background-color: aquamarine;
+    color: black;
+    font-size: xx-large;
+    padding: 5px;
+}
+
 /* Animations */
 @keyframes scrolling {
     from { transform: translateX(100%); }
