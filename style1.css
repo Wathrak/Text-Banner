@@ -29,18 +29,19 @@
 #btn-1 {
     background-color: rgb(239, 141, 209);
     color: black;
-    font-size: xx-large;
-    padding: 5px;
+    font-size: medium;
+    padding: 3px;
+    border-radius: 3px;
 }
 
 #btn-fullscreen {
     background-color: aquamarine;
     color: black;
-    font-size: xx-large;
-    padding: 5px;
+    font-size: medium;
+    padding: 3px;
+    border-radius: 3px;
 }
 
-/* Animations */
 @keyframes scrolling {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
