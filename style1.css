@@ -1,0 +1,40 @@
+/* Import Fonts */
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+#body {
+    background-color: black;
+    overflow: hidden;
+}
+
+#div-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 94vh;
+    overflow: hidden;
+}
+
+#span-1 {
+    color: red;
+    font-size: 300px;
+    white-space: nowrap;
+    font-family: lobster;
+}
+
+.run {
+    animation: scrolling 3s linear infinite;
+    animation-play-state: running;
+}   
+
+#btn-1 {
+    background-color: rgb(239, 141, 209);
+    color: rgb(185, 185, 185);
+    font-size: xx-large;
+    padding: 5px;
+}
+
+/* Animations */
+@keyframes scrolling {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}

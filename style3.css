@@ -1,0 +1,23 @@
+#body {
+    background-color: black;
+    animation:  1000ms linear infinite;
+}
+
+#div-1 {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+#span-1 {
+    color: red;
+    font-size: 300px;
+    white-space: nowrap;
+}
+
+@keyframes blinking {
+    0% { background-color: yellow; }
+    25% { background-color: yellow;}
+    50% { background-color: blue; }
+    100% { background-color: blue; }
+}

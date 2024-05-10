@@ -1,0 +1,16 @@
+
+function swapText() {
+  var text = document.getElementById("input-1");
+  console.log("hello1");
+  if (text.value == "Play") {
+    text.value="Play";
+    
+  }
+  else text.value = "Play";
+}
+
+function main() {
+  myFunction();
+  swapText();
+  console.log("Hello world!");
+}

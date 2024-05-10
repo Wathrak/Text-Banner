@@ -1,0 +1,72 @@
+/* Import Fonts */
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+#body {
+    /* background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, #f00); */
+    background-size: 400%;
+    animation: animate-background 10s ease-in-out infinite;
+}
+
+#div-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 94vh;
+    overflow: hidden;
+}
+
+#span-1 {
+    color: rgb(255, 150, 150);
+    font-size: 300px;
+    white-space: nowrap;
+    font-family: lobster;
+    text-shadow: 2px 6px 2px rgb(255, 255, 255);
+}
+
+.run {
+    animation: scrolling 2s linear infinite;
+    animation-play-state: running;
+}   
+
+#btn-1 {
+    background-color: rgb(86, 147, 127);
+    color: white;
+    font-size: xx-large;
+}
+
+/* Animations */
+@keyframes scrolling {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+  
+@keyframes animate-background {
+    0% {
+      /* background-position: 0% 0; */
+      background-color: red;
+    }
+    14.3% {
+      /* background-position: 100% 0; */
+      background-color: orange;
+    }
+    28.6% {
+        /* background-position: 0% 0; */
+        background-color: yellow;
+      }
+    42.9% {
+        background-color: green;
+      }
+    57.6% {
+        background-color: blue;
+      }
+    71.5% {
+        background-color: indigo;
+      }
+    85.8% {
+        background-color: violet;
+      }
+    100% {
+        background-color: #f00;
+      }
+  }
