@@ -29,7 +29,7 @@
 #btn-1 {
     background-color: rgb(239, 141, 209);
     color: black;
-    font-size: medium;
+    font-size: small;
     padding: 3px;
     border-radius: 3px;
 }
@@ -37,7 +37,7 @@
 #btn-fullscreen {
     background-color: aquamarine;
     color: black;
-    font-size: medium;
+    font-size: small;
     padding: 3px;
     border-radius: 3px;
 }
