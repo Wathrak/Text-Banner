@@ -7,16 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="function.js"></script>
 
-    <link rel="stylesheet" href="style1.css">
-    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <link rel="stylesheet" href="style1.css" id="style1">
+    <!-- <link rel="stylesheet" href="style2.css" id="style2" disabled> -->
+    <!-- <link rel="stylesheet" href="style3.css" id="style3" disabled> -->
 </head>
 <body id="body">
 
     <div id="div-1">
-        <p id="span-1" contenteditable="true" spellcheck="false">KSI is Gay</p>
+        <p id="p-1" contenteditable="true" spellcheck="false">KSI is Gay</p>
     </div>
-    <button id="btn-1" class="" onclick="Toggle()">Click</button>
+    <button id="btn-style" onclick="switchStyle()">Style</button>
+    <button id="btn-increase" onclick="fontDecrease()">Decrease</button>
+    <button id="btn-increase" onclick="fontIncrease()">Increase</button>
     <button id="btn-fullscreen" onclick="Fullscreen()">Full Screen</button>
+    <button id="btn-1" class="" onclick="Toggle()">Scroll</button>
+    <button id="btn-2" class="" onclick="Flicker()">Flicker</button>
+    
+
 
 </body>
 </html>

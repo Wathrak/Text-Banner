@@ -1,23 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@font-face {
+    font-family: polkadot;
+    src: url(PolkaDots-Regular.ttf);
+}
+
 #body {
     background-color: black;
-    animation:  1000ms linear infinite;
+    overflow: hidden;
 }
 
 #div-1 {
     display: flex;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    height: 96vh;
 }
 
-#span-1 {
-    color: red;
+/* Text Gradient */
+#p-1 {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-clip: text;
+    color: transparent;
     font-size: 300px;
     white-space: nowrap;
+    font-family: polkadot;
 }
 
-@keyframes blinking {
-    0% { background-color: yellow; }
-    25% { background-color: yellow;}
-    50% { background-color: blue; }
-    100% { background-color: blue; }
+.run {
+    animation: scrolling 3s linear infinite;
+    animation-play-state: running;
+}   
+
+#btn-1 {
+    background-color: rgb(242, 154, 215);
+    color: black;
+    font-size: small;
+    padding: 3px;
+    border-radius: 3px;
+}
+#btn-2 {
+    color: transparent;
+  }
+
+#btn-fullscreen {
+    background-color: rgb(227, 151, 204);
+    color: black;
+    font-size: small;
+    padding: 3px;
+    border-radius: 3px;
+  }
+
+#btn-increase, #btn-decrease, #btn-style {
+    background-color: rgb(246, 158, 192);
+    color: black;
+    font-size: small;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+@keyframes scrolling {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
 }

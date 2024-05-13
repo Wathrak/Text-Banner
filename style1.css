@@ -1,5 +1,9 @@
-/* Import Fonts */
+/* font-famlity: lobster */
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@font-face {
+    font-family: polkadot;
+    src: url(PolkaDots-Regular.ttf);
+}
 
 #body {
     background-color: black;
@@ -13,20 +17,32 @@
     height: 96vh;
 }
 
-#span-1 {
-    color: red;
+/* Text Neon */
+#p-1 {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(217, 0, 255),
+        0 0 82px rgb(217, 0, 255),
+        0 0 92px rgb(217, 0, 255),
+        0 0 102px rgb(217, 0, 255),
+        0 0 151px rgb(217, 0, 255);
     font-size: 300px;
     white-space: nowrap;
     font-family: lobster;
-}
-
-.run {
-    animation: scrolling 3s linear infinite;
-    animation-play-state: running;
-}   
+}  
 
 #btn-1 {
-    background-color: rgb(239, 141, 209);
+    background-color: rgb(242, 154, 215);
+    color: black;
+    font-size: small;
+    padding: 3px;
+    border-radius: 3px;
+}
+#btn-2 {
+    background-color: rgb(242, 154, 215);
     color: black;
     font-size: small;
     padding: 3px;
@@ -34,14 +50,62 @@
 }
 
 #btn-fullscreen {
-    background-color: aquamarine;
+    background-color: rgb(227, 151, 204);
     color: black;
     font-size: small;
     padding: 3px;
     border-radius: 3px;
 }
 
+#btn-increase, #btn-decrease, #btn-style {
+    background-color: rgb(246, 158, 192);
+    color: black;
+    font-size: small;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.run {
+    animation: scrolling 3s linear infinite;
+    animation-play-state: running;
+} 
+
 @keyframes scrolling {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
+}
+
+.flicker {
+    animation: flickering 2s linear infinite;
+    animation-play-state: running;
+} 
+
+@keyframes flickering {
+    0% { 
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(217, 0, 255),
+        0 0 82px rgb(217, 0, 255),
+        0 0 92px rgb(217, 0, 255),
+        0 0 102px rgb(217, 0, 255);
+     }
+     50% {
+    text-shadow:
+        0 0 7px #fff,
+        0 0 42px rgb(217, 0, 255),
+        0 0 82px rgb(217, 0, 255);
+    }
+    100% {
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px rgb(217, 0, 255),
+            0 0 82px rgb(217, 0, 255),
+            0 0 92px rgb(217, 0, 255),
+            0 0 102px rgb(217, 0, 255);
+         }
+     
 }
