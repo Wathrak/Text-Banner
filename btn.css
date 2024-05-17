@@ -1,13 +1,32 @@
-#button-container {
-  position: fixed; /*buttons fixed on the left side */
-  top: 10%; /*top margin */
-  left: 10px; /* Positions the container to the left */
-  display: flex;
-  flex-direction: column; /* Aligns buttons in a column */
-  gap: 10px; /*space */
+/* btn.css or add to an existing CSS file */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-#button-container button {
+#button-container {
+  position: fixed; 
+  top: 10%; 
+  left: 10px; 
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  padding: 10px; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  border: 2px solid #007bff; 
+  border-radius: 10px; 
+  z-index: 1000; 
+}
+
+#button-container h1 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+#button-container button,
+#button-container label {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -16,8 +35,31 @@
   color: white;
   border-radius: 5px;
   transition: background-color 0.3s;
+  text-align: center;
+}
+
+#button-container label {
+  background-color: transparent;
+  color: black;
+  cursor: default;
 }
 
 #button-container button:hover {
   background-color: #0056b3;
+}
+
+.fullscreen #button-container {
+  display: none; 
+}
+
+#div-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#p-1 {
+  font-size: 300px;
+  text-align: center;
 }
