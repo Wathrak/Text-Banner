@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE TEXT BOARD</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="function.js"></script>
 
-    <link rel="stylesheet" href="btn.css" id="btn" />
-    <link rel="stylesheet" href="style1.css" id="style1" />
+    <link rel="stylesheet" href="style1.css" id="style1">
     <!-- <link rel="stylesheet" href="style2.css" id="style2" disabled> -->
     <!-- <link rel="stylesheet" href="style3.css" id="style3" disabled> -->
-  </head>
-  <body id="body">
-    <div id="button-container">
-      <h1>Text Note KH</h1>
-      <button id="btn-fullscreen" onclick="Fullscreen()">Full Screen</button>
-      <button id="btn-1" class="" onclick="Toggle()">Scroll</button>
-      <button id="btn-font">Font</button>
-      <button id="btn-size">Size</button>
-      <button id="btn-increase" onclick="fontIncrease()">Increase</button>
-      <button id="btn-decrease" onclick="fontDecrease()">Decrease</button>
-      <button id="btn-color">Color</button>
-      <button id="btn-style" onclick="switchStyle()">Style</button>
-      <button id="btn-2" class="" onclick="Flicker()">Flicker</button>
-      <button id="btn-reset" class="" onclick="reset()">Reset</button>
-    </div>
+</head>
+<body id="body">
 
     <div id="div-1">
-      <p id="p-1" contenteditable="true" spellcheck="false">
-        Input your text!!
-      </p>
+        <p id="p-1" contenteditable="true" spellcheck="false">KSI is Gay</p>
     </div>
-  </body>
+    <button id="btn-style" onclick="switchStyle()">Style</button>
+    <button id="btn-increase" onclick="fontDecrease()">Decrease</button>
+    <button id="btn-increase" onclick="fontIncrease()">Increase</button>
+    <button id="btn-fullscreen" onclick="Fullscreen()">Full Screen</button>
+    <button id="btn-1" class="" onclick="Toggle()">Scroll</button>
+    <button id="btn-2" class="" onclick="Flicker()">Flicker</button>
+    
+
+
+</body>
 </html>
