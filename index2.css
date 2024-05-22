@@ -114,9 +114,21 @@ button {
     margin-top: 70%;
 }
 
+#menu {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0% 0% 0% 0%;
+    
+}
+#menu:hover {
+    cursor: pointer;
+}
+
 #p-1 {
     font-size: 200px;
 }
+
 
 
 

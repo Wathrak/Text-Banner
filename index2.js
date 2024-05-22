@@ -4,7 +4,6 @@ let element = document.documentElement;
 let isFullscreen = false;
 let size = 300;
 
-
 // Start & Stop Animation
 window.addEventListener("DOMContentLoaded", (event) => {
 
@@ -29,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function Menu() {
-    
+    document.getElementById('')
 }
 
 function Fullscreen() {
