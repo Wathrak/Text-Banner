@@ -35,17 +35,18 @@ select {
 }
 
 #font_colors {
-    background-color: rgb(244, 233, 190);
-    border-radius: 5px;
-    margin: 2% 0 2% 10%;
+    margin: 3% 0% 2% 10%;
     font-size: larger;
+    font-weight: bold;
     padding: 1%;
 }
 
 #coloring {
     background-color: rgb(244, 233, 190);
     border-radius: 5px;
-    margin: 2% 0 2% 10%;
+    margin: 2% 0 2% 5%;
+    width: 50%;
+    height: 35px;
     font-size: larger;
 }
 
@@ -72,7 +73,6 @@ select {
 }
 
 #animation-speed {
-    border-radius: 5px;
     margin-left: 10%;
     font-size: larger;
     font-weight: bold;
@@ -84,15 +84,15 @@ button {
     border-radius: 5px;
     margin-left: 10%;
     font-size: larger;
-    padding: 1% 10% 1% 10%;
+    padding: 1% 9% 1% 9%;
 }
 
 #increase {
-    
+    margin-right: 0;
 }
 
 #decrease {
-    margin-left: 0%;
+    margin-left: 4%;
 }
 
 #fullscreen-btn {
@@ -103,6 +103,6 @@ button {
 
 #reset {
     position: relative;
-    left: 20%;
-    top: 300px;
+    left: 25%;
+    margin-top: 70%;
 }
