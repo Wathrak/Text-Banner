@@ -34,6 +34,21 @@ select {
     padding: 1%;
 }
 
+#font_colors {
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 10%;
+    font-size: larger;
+    padding: 1%;
+}
+
+#coloring {
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 10%;
+    font-size: larger;
+}
+
 #screen {
     flex: 3;
     background-color: black;
@@ -45,3 +60,5 @@ select {
 #color{
     display: flex;
 }
+
+#speed
