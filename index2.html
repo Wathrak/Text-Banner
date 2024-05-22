@@ -16,35 +16,53 @@
     <div id="main">
         <div class="container" id="container">
             <div class="custom-tab">
-                <h4 class="customization">Customization</h4>
-                <div class="div-font">
-                    <select name="fonts" id="fonts" placeholder="Font">
+                Customization
+                <div class="font">
+                    <select name="fontt" id="fonts" placeholder="Font">
                         <option value=""disabled selected>Font</option>
-                        <option value="courier" class="couriers">Courier</option>
-                        <option value="franklin" class="franklins">Franklin Gothic Medium</option>
-                        <option value="gillsans" class="gillsanss">Gill Sans</option>
-                        <option value="lucida" class="lucidas">Lucida</option>
-                        <option value="segeo" class="segeos">Segeo UI</option>
-                        <option value="timenew" class="timenews">Time New Roman</option>
+                        <option value="courier" id="couriers">Courier</option>
+                        <option value="franklin" id="franklins">Franklin Gothic Medium</option>
+                        <option value="gillsans" id="gillsanss">Gill Sans</option>
+                        <option value="lucida" id="lucidas">Lucida</option>
+                        <option value="segeo" id="segeos">Segeo UI</option>
+                        <option value="timenew" id="timenews">Time New Roman</option>
                     </select>
                 </div>
-                <div class="font_size">
-                    <select name="fontsize" id="fontsizes">
-                        <option value="sizes9" class="size9">9</option>
-                        <option value="sizes10" class="size10">10</option>
-                        <option value="sizes11" class="size11">11</option>
-                        <option value="sizes12" class="size12">12</option>
-                        <option value=""><input type="number"></option>
-                    </select>
+                <div id="font_size">
+                    <input type="number" min="1" max="99" class="font_input" placeholder="Select Font Size"></option>
                 </div>
-                <div class="font_size">
-                    <input type="number" min="1" max="99" placeholder="Select Font Size"></option>
-                </div>
-                <div class="Style">
+                <div id="Style">
                     <select name="letter_style" id="letter_styles">
-                        <option value="" disabled></option>
-                        <option value="flaming" class="flamings">Flaming</option>
+                        <option value="" disabled selected>Letter Style</option>
+                        <option value="flaming" id="flamings">Flaming</option>
                     </select>
+                </div>
+                <div id="color">
+                    <label for="font_color" id="font_colors">Letter Color:</label>
+                    <input type="color" id="coloring">
+                </div>
+                <div id="Frame">
+                    <select name="frame" id="frames">
+                        <option value="" disabled selected>Select Frame Style</option>
+                        <option value="Desert" id="deserts">Desert</option>
+                        <option value="Sky" id="skys">Sky</option>
+                    </select>
+                </div>
+                <div id="Animation">
+                    <select name="animations" id="animationss">
+                        <option value="" disabled selected>Select Animation</option>
+                        <option value="pop-up" id="pops-up">Pop Up</option>
+                    </select>
+                </div>
+                <div id="speed">
+                    <label for="animation-speed" id="animation-speeds">Animation Speed:</label>
+                    <div>
+                        <button id="increase">Increase</button>
+                        <button id="decrease">Decrease</button>
+                    </div>
+                </div>
+                <div>
+                    <button>Start</button>
                 </div>
             </div>
         </div>

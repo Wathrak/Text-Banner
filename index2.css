@@ -26,7 +26,7 @@ select {
     padding: 1%;
 }
 select::after {
-    
+
 }
 
 #screen {
@@ -34,3 +34,10 @@ select::after {
     background-color: black;
 }
 
+#font_input{
+    width: 156.5px;
+}
+#color{
+    display: flex;
+    flex-direction: column;
+}
