@@ -4,10 +4,33 @@
 
 #container {
     flex: 1;
-    background-color: brown;
+    background-color: violet;
+}
+.customization {
+    text-align: center;
+    font-size: x-large;
+}
+.div-font {
+    position: relative;
+}
+.div-font select {
+    display: none;
+}
+select {
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 10%;
+    width: 80%;
+    height: 10%;
+    font-size: larger;
+    padding: 1%;
+}
+select::after {
+    
 }
 
 #screen {
     flex: 3;
     background-color: black;
 }
+
