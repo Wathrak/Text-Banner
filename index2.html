@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Text Banner</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="function.js">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="custom-tab">
+            Customization
+            <div class="font">
+                <select name="fontt" id="fonts" placeholder="Font">
+                    <option value=""disabled selected>Font</option>
+                    <option value="courier" class="couriers">Courier</option>
+                    <option value="franklin" class="franklins">Franklin Gothic Medium</option>
+                    <option value="gillsans" class="gillsanss">Gill Sans</option>
+                    <option value="lucida" class="lucidas">Lucida</option>
+                    <option value="segeo" class="segeos">Segeo UI</option>
+                    <option value="timenew" class="timenews">Time New Roman</option>
+                </select>
+            </div>
+            <div class="font_size">
+                <select name="fontsize" id="fontsizes">
+                    <option value="sizes9" class="size9">9</option>
+                    <option value="sizes10" class="size10">10</option>
+                    <option value="sizes11" class="size11">11</option>
+                    <option value="sizes12" class="size12">12</option>
+                    <option value=""><input type="number"></option>
+                </select>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
