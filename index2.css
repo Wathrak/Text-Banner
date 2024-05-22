@@ -1,0 +1,15 @@
+#main {
+    display: flex;
+}
+
+#container {
+    flex: 1;
+    background-color: brown;
+}
+
+#screen {
+    flex: 3;
+    background-color: black;
+    border-left: 5px;
+    border-color: black;
+}
