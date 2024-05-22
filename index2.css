@@ -1,10 +1,17 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 #main {
     display: flex;
+    height: 100vh;
 }
 
 #container {
     flex: 1;
     background-color: violet;
+    display: block;
 }
 #customization {
     text-align: center;
@@ -103,6 +110,58 @@ button {
 
 #reset {
     position: relative;
-    left: 25%;
+    left: 20%;
     margin-top: 70%;
+}
+
+#p-1 {
+    font-size: 200px;
+}
+
+
+
+/* Animation */
+.run {
+    animation: scrolling 3s linear infinite;
+    animation-play-state: running;
+} 
+
+@keyframes scrolling {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.flicker {
+    animation: flickering 2s linear infinite;
+    animation-play-state: running;
+} 
+
+@keyframes flickering {
+    0% { 
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(217, 0, 255),
+        0 0 82px rgb(217, 0, 255),
+        0 0 92px rgb(217, 0, 255),
+        0 0 102px rgb(217, 0, 255);
+     }
+     50% {
+    text-shadow:
+        0 0 7px #fff,
+        0 0 42px rgb(217, 0, 255),
+        0 0 82px rgb(217, 0, 255);
+    }
+    100% {
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px rgb(217, 0, 255),
+            0 0 82px rgb(217, 0, 255),
+            0 0 92px rgb(217, 0, 255),
+            0 0 102px rgb(217, 0, 255);
+         }
+     
 }
