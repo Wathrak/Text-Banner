@@ -54,11 +54,55 @@ select {
     background-color: black;
 }
 
-#font_input{
+#font_input {
     width: 156.5px;
 }
-#color{
+#color {
     display: flex;
 }
 
-#speed
+#div-speed {
+    margin-top: 2%;
+    margin-bottom: 2%
+}
+
+#btn-size {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#animation-speed {
+    border-radius: 5px;
+    margin-left: 10%;
+    font-size: larger;
+    font-weight: bold;
+    padding: 1%;
+}
+
+button {
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin-left: 10%;
+    font-size: larger;
+    padding: 1% 10% 1% 10%;
+}
+
+#increase {
+    
+}
+
+#decrease {
+    margin-left: 0%;
+}
+
+#fullscreen-btn {
+    padding: 1% 5% 1% 5%;
+    position: relative;
+    left: 20%;
+}
+
+#reset {
+    position: relative;
+    left: 20%;
+    top: 300px;
+}
