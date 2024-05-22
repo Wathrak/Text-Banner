@@ -11,3 +11,10 @@
     flex: 3;
     background-color: black;
 }
+#font_input{
+    width: 156.5px;
+}
+#color{
+    display: flex;
+    flex-direction: column;
+}
