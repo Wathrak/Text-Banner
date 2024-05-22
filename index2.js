@@ -34,7 +34,7 @@ function Menu() {
 function Fullscreen() {
     if (!isFullscreen) {
         enterFullscreen();
-        // document.getElementById('container').style.display = 'none';
+        document.getElementById('container').style.display = 'none';
     }
     else {
         closeFullscreen();
