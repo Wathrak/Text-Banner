@@ -28,13 +28,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function Menu() {
-    document.getElementById('')
+    document.getElementById('menu').style.display = 'block';
 }
 
 function Fullscreen() {
     if (!isFullscreen) {
         enterFullscreen();
-        document.getElementById('container').style.display = 'none';
+        // document.getElementById('container').style.display = 'none';
+    }
+    else {
+        closeFullscreen();
     }
 }
 

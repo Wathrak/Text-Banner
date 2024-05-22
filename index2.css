@@ -116,10 +116,12 @@ button {
 
 #menu {
     background-color: transparent;
-    color: white;
+    color: palevioletred;
     border: none;
     padding: 0% 0% 0% 0%;
-    
+    font-size: xx-large;
+    position: relative;
+    right: 9%;
 }
 #menu:hover {
     cursor: pointer;
