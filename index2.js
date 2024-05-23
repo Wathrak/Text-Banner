@@ -9,59 +9,92 @@ const defaultFontFamily = 'polkadot';
 
 // Start & Stop Animation
 window.addEventListener("DOMContentLoaded", (event) => {
-    const animation_run = document.querySelector('#increase');
-    animation_run.addEventListener('click', function() {
-       const a1 = document.getElementById('div-1');
-       a1.classList.toggle("run");
-    });
+    const div = document.getElementById('div-1');
+    const p = document.getElementById('p-1');
 
-    const increase = document.querySelector('#increase');
-    increase.addEventListener('click', function() {
+    const animationRunBtn = document.querySelector('#start-btn');
+    const fullscreenBtn = document.querySelector('#fullscreen-btn');
+    const animationStyle = document.querySelector('#animation-style');
+    const fontStyle = document.querySelector('#font-style');
+    const fontSelect = document.querySelector('#font');
+    const colorInput = document.querySelector('#coloring');
+    const increaseBtn = document.querySelector('#increase');
+    const decreaseBtn = document.querySelector('#decrease');
+    const fontSizeInput = document.getElementById('font_input');
+    const resetButton = document.getElementById('reset-btn');
+
+    // Initialize input values
+    fontSizeInput.value = size;
+
+    // Font size increase
+    increaseBtn.addEventListener('click', function() {
         if (size < 500) {
             size += 1;
-            document.getElementById("p-1").style.fontSize = `${size}px`;
-            document.getElementById('font_input').value = size;
+            p.style.fontSize = `${size}px`;
+            fontSizeInput.value = size;
         }
     });
 
-    const decrease = document.querySelector('#decrease');
-    decrease.addEventListener('click', function() {
+    // Font size decrease
+    decreaseBtn.addEventListener('click', function() {
         if (size > 1) {
             size -= 1;
-            document.getElementById("p-1").style.fontSize = `${size}px`;
-            document.getElementById('font_input').value = size;
+            p.style.fontSize = `${size}px`;
+            fontSizeInput.value = size;
         }
     });
 
-    
-    const fontSizeInput = document.getElementById('font_input');
-    fontSizeInput.value = size;
+    // Font size input
     fontSizeInput.addEventListener('input', function() {
         const newSize = fontSizeInput.value;
         if (newSize >= 1 && newSize <= 500) {
-            document.getElementById("p-1").style.fontSize = `${newSize}px`;
-            size = parseInt(newSize); 
+            p.style.fontSize = `${newSize}px`;
+            size = parseInt(newSize);
         }
     });
 
     // Change font color
-    const colorInput = document.getElementById('coloring');
     colorInput.addEventListener('input', function() {
-        const newColor = colorInput.value;
-        document.getElementById("p-1").style.color = newColor;
+        p.style.color = colorInput.value;
     });
 
-    // Change font
-    const fontSelect = document.getElementById('font');
+    // Change font family
     fontSelect.addEventListener('change', function() {
-        const newFont = fontSelect.value;
-        document.getElementById("p-1").style.fontFamily = newFont;
+        if (fontSelect.value === 'polkadot') {
+            p.classList.remove('lobster');
+            p.classList.add('polkadot');
+        } else if (fontSelect.value === 'lobster') {
+            p.classList.remove('polkadot');
+            p.classList.add('lobster');
+        }
+    });
+
+    // Change font style
+    fontStyle.addEventListener('change', function() {
+        if (fontStyle.value === 'none') {
+            p.classList.remove('neon');
+            p.classList.remove('style-2');
+        } else if (fontStyle.value === 'neon') {
+            p.classList.add('neon');
+            p.classList.remove('style-2');
+        } else if (fontStyle.value === 'style-2') {
+            p.classList.add('style-2');
+            p.classList.remove('neon');
+        }
+    });
+
+    // Start & Stop Animation
+    animationRunBtn.addEventListener('click', function() {
+        div.classList.toggle(animationStyle.value);
+    });
+
+    // Fullscreen toggle
+    fullscreenBtn.addEventListener('click', function() {
+        Fullscreen();
     });
 
     // Reset button function
-    const resetButton = document.getElementById('reset-btn');
     resetButton.addEventListener('click', resetCustomization);
-
 });
 
 function resetCustomization() {
@@ -80,7 +113,7 @@ function resetCustomization() {
 
 function Menu() {
     var container = document.getElementById('container');
-    if (menu.textContent == '>>') {
+    if (menu.textContent === '>>') {
         menu.textContent = '<<';
         container.style.display = 'block';
     } else {
@@ -101,9 +134,9 @@ function Fullscreen() {
 
 function enterFullscreen() {
     if (element.requestFullscreen) {
-      element.requestFullscreen();
+        element.requestFullscreen();
     } else if (element.webkitRequestFullscreen) {
-      element.webkitRequestFullscreen();
+        element.webkitRequestFullscreen();
     }
     isFullscreen = true;
     document.body.classList.add('fullscreen');
@@ -111,9 +144,9 @@ function enterFullscreen() {
 
 function closeFullscreen() {
     if (document.exitFullscreen) {
-      document.exitFullscreen();
+        document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
+        document.webkitExitFullscreen();
     }
     isFullscreen = false;
     document.body.classList.remove('fullscreen');
