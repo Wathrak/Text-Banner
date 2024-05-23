@@ -108,6 +108,10 @@ function resetCustomization() {
     // Remove any applied animations
     div.classList.remove('run');
     size = 300;
+
+    // when reset , reset bg to black
+    document.getElementById('screen').style.backgroundColor = 'black';
+
 }
 
 function Menu() {
