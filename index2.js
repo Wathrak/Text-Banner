@@ -15,14 +15,44 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const increase = document.querySelector('#increase');
     increase.addEventListener('click', function() {
-        size += 50;
-        document.getElementById("p-1").style.fontSize = `${size}px`;
+        if (size < 500) {
+            size += 50;
+            if (size > 500) size = 500;
+            document.getElementById("p-1").style.fontSize = `${size}px`;
+        }
     });
 
     const decrease = document.querySelector('#decrease');
     decrease.addEventListener('click', function() {
-        size -= 50;
-        document.getElementById("p-1").style.fontSize = `${size}px`;
+        if (size > 1) {
+            size -= 50;
+            if (size < 1) size = 1;
+            document.getElementById("p-1").style.fontSize = `${size}px`;
+        }
+    });
+
+    // Change font size based on input
+    const fontSizeInput = document.getElementById('font_input');
+    fontSizeInput.addEventListener('input', function() {
+        const newSize = fontSizeInput.value;
+        if (newSize >= 1 && newSize <= 500) {
+            document.getElementById("p-1").style.fontSize = `${newSize}px`;
+            size = newSize;
+        }
+    });
+
+    // Change font color
+    const colorInput = document.getElementById('coloring');
+    colorInput.addEventListener('input', function() {
+        const newColor = colorInput.value;
+        document.getElementById("p-1").style.color = newColor;
+    });
+
+    // Change font 
+    const fontSelect = document.getElementById('font');
+    fontSelect.addEventListener('change', function() {
+        const newFont = fontSelect.value;
+        document.getElementById("p-1").style.fontFamily = newFont;
     });
 
 });
