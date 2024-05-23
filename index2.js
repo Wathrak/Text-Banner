@@ -28,12 +28,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function Menu() {
-    document.getElementById('menu').style.display = 'block';
+    var container = document.getElementById('container');
+    if (menu.textContent == '>>') {
+        menu.textContent = '<<';
+        container.style.display = 'block';
+    }
+    else {
+        menu.textContent = '>>';
+        container.style.display = 'none';
+    }
 }
 
 function Fullscreen() {
     if (!isFullscreen) {
         enterFullscreen();
+        menu.textContent = '>>';
         document.getElementById('container').style.display = 'none';
     }
     else {
