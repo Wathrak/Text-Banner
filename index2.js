@@ -1,11 +1,11 @@
 let element = document.documentElement;
 let isFullscreen = false;
-let size = 300;
+let size = 200;
 
 // Default Text style
-const defaultFontSize = '300px';
-const defaultColor = 'red';
-const defaultFontFamily = 'polkadot';
+const defaultFontSize = '200px';
+const defaultColor = '#ff0000'; // Default red color in hex format
+const defaultFontFamily = 'timenews';
 
 // Start & Stop Animation
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -14,13 +14,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const animationRunBtn = document.querySelector('#start-btn');
     const fullscreenBtn = document.querySelector('#fullscreen-btn');
-    const animationStyle = document.querySelector('#animation-style');
     const fontStyle = document.querySelector('#font-style');
     const fontSelect = document.querySelector('#font');
     const colorInput = document.querySelector('#coloring');
     const increaseBtn = document.querySelector('#increase');
     const decreaseBtn = document.querySelector('#decrease');
-    const fontSizeInput = document.getElementById('font_input');
+    const fontSizeInput = document.getElementById('font-input');
     const resetButton = document.getElementById('reset-btn');
 
     // Initialize input values
@@ -60,32 +59,26 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Change font family
     fontSelect.addEventListener('change', function() {
-        if (fontSelect.value === 'polkadot') {
-            p.classList.remove('lobster');
-            p.classList.add('polkadot');
-        } else if (fontSelect.value === 'lobster') {
-            p.classList.remove('polkadot');
-            p.classList.add('lobster');
-        }
+        p.className = 'p-1'; // Reset classes
+        p.classList.add(fontSelect.value); // Add selected font class
     });
 
     // Change font style
     fontStyle.addEventListener('change', function() {
-        if (fontStyle.value === 'none') {
-            p.classList.remove('neon');
-            p.classList.remove('style-2');
-        } else if (fontStyle.value === 'neon') {
-            p.classList.add('neon');
-            p.classList.remove('style-2');
-        } else if (fontStyle.value === 'style-2') {
-            p.classList.add('style-2');
-            p.classList.remove('neon');
-        }
+        p.classList.toggle('neon', fontStyle.value === 'neon');
+    });
+
+    // Chnage bg color
+    const bgColorInput = document.querySelector('#bgcoloring');
+    const container = document.getElementById('screen');
+
+    bgColorInput.addEventListener('input', function() {
+    container.style.backgroundColor = bgColorInput.value;
     });
 
     // Start & Stop Animation
     animationRunBtn.addEventListener('click', function() {
-        div.classList.toggle(animationStyle.value);
+        div.classList.toggle('run');
     });
 
     // Fullscreen toggle
@@ -100,19 +93,26 @@ window.addEventListener("DOMContentLoaded", (event) => {
 function resetCustomization() {
     // Reset the text style
     const paragraph = document.getElementById('p-1');
+    const div = document.getElementById('div-1');
     paragraph.style.fontSize = defaultFontSize;
     paragraph.style.color = defaultColor;
-    paragraph.style.fontFamily = defaultFontFamily;
+    paragraph.className = 'p-1'; // Reset classes
+    paragraph.classList.add(defaultFontFamily);
 
     // Reset input values
-    document.getElementById('font_input').value = 300;
+    document.getElementById('font-input').value = 200;
+    document.getElementById('coloring').value = defaultColor;
+    document.getElementById('font').value = 'timenew';
+    document.getElementById('font-style').value = 'none';
 
-    // Reset size
+    // Remove any applied animations
+    div.classList.remove('run');
     size = 300;
 }
 
 function Menu() {
     var container = document.getElementById('container');
+    var menu = document.getElementById('menu');
     if (menu.textContent === '>>') {
         menu.textContent = '<<';
         container.style.display = 'block';
@@ -123,6 +123,7 @@ function Menu() {
 }
 
 function Fullscreen() {
+    var menu = document.getElementById('menu');
     if (!isFullscreen) {
         enterFullscreen();
         menu.textContent = '>>';

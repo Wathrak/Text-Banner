@@ -68,6 +68,26 @@ select {
     font-size: larger;
 }
 
+#div-bgcolor {
+    display: flex;
+    align-items: center;
+}
+
+#bg-color {
+    margin: 0% 0% 0% 10%;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#bgcoloring {
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 5%;
+    width: 50%; /* Same width as the first color picker */
+    height: 35px; /* Same height as the first color picker */
+    font-size: larger; /* Same font size as the first color picker */
+}
+
 #screen {
     flex: 3;
     background-color: black;
@@ -121,7 +141,7 @@ button {
     margin-bottom: 5%;
     position: relative;
     left: 20%;
-    margin-top: 70%;
+    margin-top: 30%;
 }
 
 #reset {
