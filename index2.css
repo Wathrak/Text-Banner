@@ -1,6 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@font-face {
+    font-family: polkadot;
+    src: url(PolkaDots-Regular.ttf);
+}
+
 body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 #main {
@@ -12,14 +19,13 @@ body {
     flex: 1;
     background-color: violet;
     display: block;
+    z-index: 10;
 }
 #customization {
     text-align: center;
     font-size: x-large;
 }
-.div-font {
-    position: relative;
-}
+
 .div-font select {
     display: none;
 }
@@ -33,19 +39,24 @@ select {
     padding: 1%;
 }
 
-#font_input {
+#font-input {
     background-color: rgb(244, 233, 190);
     border-radius: 5px;
     margin: 2% 0 2% 10%;
     font-size: larger;
     padding: 1%;
+    width: 77%;
 }
 
-#font_colors {
-    margin: 3% 0% 2% 10%;
+#div-color {
+    display: flex;
+    align-items: center;
+}
+
+#font-color {
+    margin: 0% 0% 0% 10%;
     font-size: larger;
     font-weight: bold;
-    padding: 1%;
 }
 
 #coloring {
@@ -62,9 +73,6 @@ select {
     background-color: black;
 }
 
-#font_input {
-    width: 156.5px;
-}
 #color {
     display: flex;
 }
@@ -108,10 +116,18 @@ button {
     left: 20%;
 }
 
-#reset {
+#start-btn {
+    padding: 1% 10% 1% 11%;
+    margin-bottom: 5%;
     position: relative;
     left: 20%;
     margin-top: 70%;
+}
+
+#reset {
+    position: relative;
+    left: 20%;
+    /* margin-top: 70%; */
 }
 
 #menu {
@@ -127,55 +143,8 @@ button {
     cursor: pointer;
 }
 
-#p-1 {
-    font-size: 200px;
-}
-
-
-
-
-/* Animation */
-.run {
-    animation: scrolling 3s linear infinite;
-    animation-play-state: running;
-} 
-
-@keyframes scrolling {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-
-.flicker {
-    animation: flickering 2s linear infinite;
-    animation-play-state: running;
-} 
-
-@keyframes flickering {
-    0% { 
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px rgb(217, 0, 255),
-        0 0 82px rgb(217, 0, 255),
-        0 0 92px rgb(217, 0, 255),
-        0 0 102px rgb(217, 0, 255);
-     }
-     50% {
-    text-shadow:
-        0 0 7px #fff,
-        0 0 42px rgb(217, 0, 255),
-        0 0 82px rgb(217, 0, 255);
-    }
-    100% {
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px rgb(217, 0, 255),
-            0 0 82px rgb(217, 0, 255),
-            0 0 92px rgb(217, 0, 255),
-            0 0 102px rgb(217, 0, 255);
-         }
-     
+#div-1 {
+    z-index: 1;
+    position: relative;
+    top: 10%;
 }

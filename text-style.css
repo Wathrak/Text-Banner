@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@font-face {
+    font-family: polkadot;
+    src: url(PolkaDots-Regular.ttf);
+}
+
+/* Original */
+.p-1 {
+    font-size: 200px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: none;
+}
+
+/* Font Name */
+.polkadot {
+    font-family: polkadot;
+}
+
+.lobster {
+    /* color: rgb(255, 150, 150); */
+    font-family: lobster;
+    text-shadow: 2px 6px 2px rgb(255, 255, 255);
+}
+
+/* Text Color */
+.color {
+    color: red;
+}
+
+
+/* Text Style */
+.neon {
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(217, 0, 255),
+        0 0 82px rgb(217, 0, 255),
+        0 0 92px rgb(217, 0, 255),
+        0 0 102px rgb(217, 0, 255),
+        0 0 151px rgb(217, 0, 255);
+}  
+
