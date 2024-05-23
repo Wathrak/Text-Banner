@@ -1,5 +1,3 @@
-
-
 let element = document.documentElement;
 let isFullscreen = false;
 let size = 300;
@@ -71,8 +69,7 @@ function Menu() {
     if (menu.textContent == '>>') {
         menu.textContent = '<<';
         container.style.display = 'block';
-    }
-    else {
+    } else {
         menu.textContent = '>>';
         container.style.display = 'none';
     }
@@ -83,8 +80,7 @@ function Fullscreen() {
         enterFullscreen();
         menu.textContent = '>>';
         document.getElementById('container').style.display = 'none';
-    }
-    else {
+    } else {
         closeFullscreen();
     }
 }
@@ -92,8 +88,7 @@ function Fullscreen() {
 function enterFullscreen() {
     if (element.requestFullscreen) {
       element.requestFullscreen();
-    } 
-    else if (element.webkitRequestFullscreen) {
+    } else if (element.webkitRequestFullscreen) {
       element.webkitRequestFullscreen();
     }
     isFullscreen = true;
@@ -103,8 +98,7 @@ function enterFullscreen() {
 function closeFullscreen() {
     if (document.exitFullscreen) {
       document.exitFullscreen();
-    } 
-    else if (document.webkitExitFullscreen) {
+    } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen();
     }
     isFullscreen = false;
