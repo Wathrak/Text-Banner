@@ -68,13 +68,28 @@ select {
     font-size: larger;
 }
 
-#screen {
-    flex: 3;
-    background-color: black;
-}
-
 #color {
     display: flex;
+}
+
+#div-bgcolor {
+    display: flex;
+    align-items: center;
+}
+
+#bg-color {
+    margin: 0% 0% 0% 10%;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#bgcoloring {
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 5%;
+    width: 50%;
+    height: 35px;
+    font-size: larger;
 }
 
 #div-speed {
@@ -121,7 +136,7 @@ button {
     margin-bottom: 5%;
     position: relative;
     left: 20%;
-    margin-top: 70%;
+    margin-top: 30%;
 }
 
 #reset {
@@ -136,15 +151,29 @@ button {
     border: none;
     padding: 0% 0% 0% 0%;
     font-size: xx-large;
-    position: relative;
-    right: 9%;
+    position: absolute;
+    top: 0%;
+    left: 16%;
 }
 #menu:hover {
     cursor: pointer;
 }
 
-#div-1 {
-    z-index: 1;
-    position: relative;
-    top: 10%;
+#screen {
+    flex: 3;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#screen.brick {
+    background-image: url('brick.jpg');
+    background-size: cover;
+}
+
+#div-1 {
+    overflow: hidden;
+}
+
