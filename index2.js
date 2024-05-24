@@ -188,7 +188,9 @@ function resetCustomization() {
 
     // Remove animations
     div.classList.remove('run');
+    div.classList.remove('flicker');
     size = 200;
+    speed = 2;
 
     // When reset, reset bg to black
     container.style.backgroundColor = 'black';
