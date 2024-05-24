@@ -4,7 +4,7 @@ let size = 200;
 
 // Default Text style
 const defaultFontSize = '200px';
-const defaultColor = '#ff0000'; // Default red color in hex format
+const defaultColor = '#ff0000'; // Default red color
 const defaultFontFamily = 'timenews';
 
 // Start & Stop Animation
@@ -105,7 +105,7 @@ function resetCustomization() {
     document.getElementById('font').value = 'timenew';
     document.getElementById('font-style').value = 'none';
 
-    // Remove any applied animations
+    // Remove animations
     div.classList.remove('run');
     size = 300;
 
