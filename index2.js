@@ -3,6 +3,7 @@ let isFullscreen = false;
 let size = 200;
 
 // Default Text style
+const defaultText = 'Welcome!!';
 const defaultFontSize = '200px';
 const defaultColor = '#ff0000'; // Default red color
 const defaultFontFamily = 'timenews';
@@ -11,6 +12,7 @@ const defaultFontFamily = 'timenews';
 window.addEventListener("DOMContentLoaded", (event) => {
     const div = document.getElementById('div-1');
     const p = document.getElementById('p-1');
+    const container = document.getElementById('screen');
 
     const animationRunBtn = document.querySelector('#start-btn');
     const fullscreenBtn = document.querySelector('#fullscreen-btn');
@@ -21,6 +23,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const decreaseBtn = document.querySelector('#decrease');
     const fontSizeInput = document.getElementById('font-input');
     const resetButton = document.getElementById('reset-btn');
+    const frameSelect = document.getElementById('frame');
 
     // Initialize input values
     fontSizeInput.value = size;
@@ -60,7 +63,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // Change font family
     fontSelect.addEventListener('change', function() {
         p.className = 'p-1'; // Reset classes
-        p.classList.add(fontSelect.value); // Add selected font class
+        p.classList.add(fontSelect.value);
     });
 
     // Change font style
@@ -68,12 +71,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
         p.classList.toggle('neon', fontStyle.value === 'neon');
     });
 
-    // Chnage bg color
+    // Change bg color
     const bgColorInput = document.querySelector('#bgcoloring');
-    const container = document.getElementById('screen');
 
     bgColorInput.addEventListener('input', function() {
-    container.style.backgroundColor = bgColorInput.value;
+        container.style.backgroundColor = bgColorInput.value;
+    });
+
+    // Frame style change
+    frameSelect.addEventListener('change', function() {
+        if (frameSelect.value === 'brick') {
+            container.style.backgroundImage = 'url(brick.jpg)';
+            container.style.backgroundSize = 'cover';
+        } else if (frameSelect.value === 'none') {
+            container.style.backgroundImage = '';
+            container.style.backgroundColor = bgColorInput.value || 'black';
+        } else {
+            container.style.backgroundImage = '';
+        }
     });
 
     // Start & Stop Animation
@@ -94,24 +109,28 @@ function resetCustomization() {
     // Reset the text style
     const paragraph = document.getElementById('p-1');
     const div = document.getElementById('div-1');
+    const container = document.getElementById('screen');
     paragraph.style.fontSize = defaultFontSize;
     paragraph.style.color = defaultColor;
     paragraph.className = 'p-1'; // Reset classes
     paragraph.classList.add(defaultFontFamily);
+    paragraph.textContent = defaultText; // Reset text content
 
     // Reset input values
     document.getElementById('font-input').value = 200;
     document.getElementById('coloring').value = defaultColor;
     document.getElementById('font').value = 'timenew';
     document.getElementById('font-style').value = 'none';
+    document.getElementById('frame').value = ''; // Reset to default "Frame Style"
+    document.getElementById('bgcoloring').value = '#000000'; // Reset background color picker
 
     // Remove animations
     div.classList.remove('run');
-    size = 300;
+    size = 200;
 
-    // when reset , reset bg to black
-    document.getElementById('screen').style.backgroundColor = 'black';
-
+    // When reset, reset bg to black
+    container.style.backgroundColor = 'black';
+    container.style.backgroundImage = '';
 }
 
 function Menu() {
