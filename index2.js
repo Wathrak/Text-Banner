@@ -101,13 +101,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     increase.addEventListener('click', function() {
-        speed += 0.5;
-        document.getElementById("p-1").style.animationDuration = `${speed}s`;
+        speed -= 0.5;
+        div.style.animationDuration = `${speed}s`;
     });
 
     decrease.addEventListener('click', function() {
-        speed -= 0.5;
-        document.getElementById("p-1").style.animationDuration = `${speed}s`;
+        speed += 0.5;
+        div.style.animationDuration = `${speed}s`;
     });
 
     
