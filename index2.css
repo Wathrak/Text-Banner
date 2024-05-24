@@ -151,9 +151,9 @@ button {
     border: none;
     padding: 0% 0% 0% 0%;
     font-size: xx-large;
-    position: relative;
-    top: -47%;
-    left: -18%;
+    position: absolute;
+    top: 0%;
+    left: 17%;
 }
 #menu:hover {
     cursor: pointer;
