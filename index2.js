@@ -121,9 +121,11 @@ function Menu() {
     var container = document.getElementById('container');
     if (menu.textContent == '>>') {
         menu.textContent = '<<';
+        menu.style.transform = 'translateX(0px)';
         container.style.display = 'block';
     } else {
         menu.textContent = '>>';
+        menu.style.transform = 'translateX(-160px)';
         container.style.display = 'none';
     }
 }
@@ -135,6 +137,7 @@ function Fullscreen() {
         menu.textContent = '>>';
         document.getElementById('container').style.display = 'none';
     } else {
+        menu.style.transform = 'translateX(0)';
         closeFullscreen();
     }
 }
