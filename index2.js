@@ -1,7 +1,7 @@
 let element = document.documentElement;
 let isFullscreen = false;
 let size = 200;
-
+let speed = 2;
 
 // Start & Stop Animation
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -19,9 +19,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const fontSizeInput = document.getElementById('font-input');
     const resetButton = document.getElementById('reset-btn');
     const frameSelect = document.getElementById('frame');
-    
-    const increaseBtn = document.querySelector('#increase');
-    const decreaseBtn = document.querySelector('#decrease');
+    const increase = document.querySelector('#increase');
+    const decrease = document.querySelector('#decrease');
 
     // Initialize input values
     fontSizeInput.value = size;
@@ -60,24 +59,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
-    // // Font Family
-    // font.addEventListener('change', function() {
+    // Font Family
+    font.addEventListener('change', function() {
 
-    //     if (font.value == 'polkadot') {
-    //         p.classList.remove('lobster');
-    //         p.classList.add('polkadot');
+        if (font.value == 'polkadot') {
+            p.classList.remove('lobster');
+            p.classList.add('polkadot');
             
-    //     }
-    //     else if (font.value == 'lobster') {
-    //         p.classList.remove('polkadot');
-    //         p.classList.add('lobster');
-    //     }
-    // });
-
-    // Change font family
-    fontSelect.addEventListener('change', function() {
-        p.className = 'p-1'; // Reset classes
-        p.classList.add(fontSelect.value);
+        }
+        else if (font.value == 'lobster') {
+            p.classList.remove('polkadot');
+            p.classList.add('lobster');
+        }
     });
 
     // Font Style
@@ -99,11 +92,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         
     });
 
-    // // Change font style
-    // fontStyle.addEventListener('change', function() {
-    //     p.classList.toggle('neon', fontStyle.value === 'neon');
-    // });
-
     animation_run.addEventListener('click', function() {
         div.classList.toggle(animationStyle.value);
     });
@@ -112,8 +100,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
         div.classList.add('run');
     });
 
-    
+    increase.addEventListener('click', function() {
+        speed += 0.5;
+        document.getElementById("p-1").style.animationDuration = `${speed}s`;
+    });
 
+    decrease.addEventListener('click', function() {
+        speed -= 0.5;
+        document.getElementById("p-1").style.animationDuration = `${speed}s`;
+    });
+
+    
     // Reset button function
     resetButton.addEventListener('click', resetCustomization);
 
@@ -182,10 +179,11 @@ function resetCustomization() {
     // Reset input values
     document.getElementById('font-input').value = 200;
     document.getElementById('coloring').value = defaultColor;
-    document.getElementById('font').value = 'timenew';
-    document.getElementById('font-style').value = 'none';
-    document.getElementById('frame').value = ''; // Reset to default "Frame Style"
+    document.getElementById('font').value = '1';
+    document.getElementById('font-style').value = '1';
+    document.getElementById('frame').value = '1'; // Reset to default "Frame Style"
     document.getElementById('bgcoloring').value = '#000000'; // Reset background color picker
+    document.getElementById('animation-style').value = '1';
 
     // Remove animations
     div.classList.remove('run');
