@@ -130,6 +130,7 @@ function Menu() {
 
 function Fullscreen() {
     if (!isFullscreen) {
+        menu.style.transform = 'translateX(-160px)';
         enterFullscreen();
         menu.textContent = '>>';
         document.getElementById('container').style.display = 'none';
