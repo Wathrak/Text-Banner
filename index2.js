@@ -14,35 +14,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const fullscreen = document.querySelector('#fullscreen-btn');
     const animationStyle = document.querySelector('#animation-style');
     const fontStyle = document.querySelector('#font-style');
-    // const font = document.querySelector('#font');
     const fontSelect = document.querySelector('#font');
     const color = document.querySelector('#coloring');
-    const increaseBtn = document.querySelector('#increase');
-    const decreaseBtn = document.querySelector('#decrease');
     const fontSizeInput = document.getElementById('font-input');
     const resetButton = document.getElementById('reset-btn');
     const frameSelect = document.getElementById('frame');
+    
+    const increaseBtn = document.querySelector('#increase');
+    const decreaseBtn = document.querySelector('#decrease');
 
     // Initialize input values
     fontSizeInput.value = size;
-
-    // Font size increase
-    increaseBtn.addEventListener('click', function() {
-        if (size < 500) {
-            size += 1;
-            p.style.fontSize = `${size}px`;
-            fontSizeInput.value = size;
-        }
-    });
-
-    // Font size decrease
-    decreaseBtn.addEventListener('click', function() {
-        if (size > 1) {
-            size -= 1;
-            p.style.fontSize = `${size}px`;
-            fontSizeInput.value = size;
-        }
-    });
 
     // Font size input
     fontSizeInput.addEventListener('input', function() {
