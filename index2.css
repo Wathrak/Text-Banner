@@ -212,7 +212,6 @@ button {
 @media screen and (max-width: 1026px) and (max-height: 562px) {
     #main {
         display: block;
-        overflow-y: auto;
     }
     #menu {
         display: none;
