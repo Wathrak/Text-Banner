@@ -22,24 +22,6 @@ body {
     z-index: 10;
 }
 
-@media screen and (max-width: 1026px) and (max-height: 562px) {
-    #main {
-        display: block;
-        overflow-y: auto;
-        height: 100vh;
-    }
-    #menu {
-        display: none;
-    }
-    #container {
-        order: 2;
-        background-color: brown;
-        
-    }
-    #screen {
-        order: 1;
-    }
-}
 #customization {
     text-align: center;
     font-size: x-large;
@@ -143,6 +125,10 @@ select {
     margin-bottom: 4%;
 }
 
+#btn-speed {
+    text-align: center;
+}
+
 #animation-speed {
     margin-left: 10%;
     font-size: larger;
@@ -165,25 +151,34 @@ button {
 #decrease {
     margin-left: 4%;
 }
-
+#fullscreen {
+    text-align: center;
+}
 #fullscreen-btn {
-    padding: 1% 5% 1% 5%;
-    position: relative;
-    left: 20%;
+    padding: 1% 7% 1% 7%;
+    /* position: relative;
+    left: 20%; */
 }
 
+#start {
+    margin-top: 50%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+/* 
 #start-btn {
     padding: 1% 10% 1% 11%;
     margin-bottom: 5%;
     position: relative;
     left: 20%;
     margin-top: 30%;
-}
+} */
 
 #reset {
-    position: relative;
+    /* position: relative;
     left: 20%;
-    /* margin-top: 70%; */
+    margin-top: 70%; */
+    text-align: center;
 }
 
 #menu {
@@ -214,7 +209,23 @@ button {
     height: auto;
 }
 
-/* #screen.brick {
-    background-image: url('brick.jpg');
-    background-size: cover;
-} */
+@media screen and (max-width: 1026px) and (max-height: 562px) {
+    #main {
+        display: block;
+        overflow-y: auto;
+    }
+    #menu {
+        display: none;
+    }
+    #container {
+        order: 2;
+        background-color: brown;
+                
+    }
+    #start {
+        margin-top: 3%;
+    }
+    #screen {
+        order: 1;
+    }
+}
