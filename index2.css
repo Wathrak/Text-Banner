@@ -21,6 +21,20 @@ body {
     display: block;
     z-index: 10;
 }
+
+@media screen and (max-width: 600px) {
+    #main {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        div#container {order: 2;}
+        div#screen {order: 1;}
+        height: 200vh;
+    }
+    #container {
+        background-color: brown;
+    }
+}
 #customization {
     text-align: center;
     font-size: x-large;
@@ -175,7 +189,7 @@ button {
     font-size: xx-large;
     position: absolute;
     top: 0%;
-    left: 17%;
+    left: 16%;
 }
 #menu:hover {
     cursor: pointer;

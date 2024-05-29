@@ -60,14 +60,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // Font Family
-    font.addEventListener('change', function() {
-
-        if (font.value == 'polkadot') {
+    fontSelect.addEventListener('change', function() {
+        console.log(fontSelect.value);
+        console.log(p.classList);
+        if (fontSelect.value == 'polkadot') {
             p.classList.remove('lobster');
             p.classList.add('polkadot');
             
         }
-        else if (font.value == 'lobster') {
+        else if (fontSelect.value == 'lobster') {
             p.classList.remove('polkadot');
             p.classList.add('lobster');
         }
@@ -121,18 +122,18 @@ function Menu() {
     var container = document.getElementById('container');
     if (menu.textContent == '>>') {
         menu.textContent = '<<';
-        menu.style.transform = 'translateX(0px)';
+        menu.style.transform = 'translateX(0)';
         container.style.display = 'block';
     } else {
         menu.textContent = '>>';
-        menu.style.transform = 'translateX(-160px)';
+        menu.style.transform = 'translateX(-430px)';
         container.style.display = 'none';
     }
 }
 
 function Fullscreen() {
     if (!isFullscreen) {
-        menu.style.transform = 'translateX(-160px)';
+        menu.style.transform = 'translateX(-430px)';
         enterFullscreen();
         menu.textContent = '>>';
         document.getElementById('container').style.display = 'none';

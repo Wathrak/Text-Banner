@@ -1,17 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=Lobster);
 @font-face {
     font-family: polkadot;
     src: url(PolkaDots-Regular.ttf);
 }
 
 /* Original */
-/* #p-1 {
+#p-1 {
     font-size: 200px;
     white-space: nowrap;
     text-align: center;
-    font-family: none;
-} */
+}
 
 /* Font Name */
 .polkadot {
