@@ -4,24 +4,22 @@
 .run {
     animation: run 3s linear infinite;
     animation-play-state: running;
-} 
+}
 
 .rainbow {
-    animation: flickering 2s linear infinite;
-    animation-play-state: running;
+  animation: rainbow 2s linear infinite;
+  animation-play-state: running;
 } 
 
-
+.flicker {
+  animation: flicker 2s linear infinite;
+  animation-play-state: running;
+} 
 
 @keyframes run {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
 }
-
-.flicker {
-    animation: flicker 2s linear infinite;
-    animation-play-state: running;
-} 
 
 @keyframes flicker {
     0% { 
@@ -53,14 +51,11 @@
      
 }
 
-
-/* Rainbow */
 @keyframes rainbow {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
 }
 
-  
 @keyframes animate-background {
     0% {
       /* background-position: 0% 0; */
