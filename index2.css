@@ -22,17 +22,22 @@ body {
     z-index: 10;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1026px) and (max-height: 562px) {
     #main {
-        display: flex;
-        flex-direction: column;
-        overflow: scroll;
-        div#container {order: 2;}
-        div#screen {order: 1;}
-        height: 200vh;
+        display: block;
+        overflow-y: auto;
+        height: 100vh;
+    }
+    #menu {
+        display: none;
     }
     #container {
+        order: 2;
         background-color: brown;
+        
+    }
+    #screen {
+        order: 1;
     }
 }
 #customization {
