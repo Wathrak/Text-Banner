@@ -199,3 +199,9 @@ function resetCustomization() {
     container.style.backgroundColor = 'black';
     container.style.backgroundImage = '';
 }
+
+// canvas
+var can = document.getElementById("p-1");
+var cantx = can.getContext("2d");
+cantx.font = "30px Arial";
+cantx.fillText("Hello World", 10, 50);
