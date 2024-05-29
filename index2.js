@@ -202,6 +202,15 @@ function resetCustomization() {
 
 // canvas
 var can = document.getElementById("p-1");
+var canbtn = document.getElementById("start-btn");
 var cantx = can.getContext("2d");
+var inputting = document.getElementById("textinput");
+cantx.fillStyle = "white";
 cantx.font = "30px Arial";
-cantx.fillText("Hello World", 10, 50);
+cantx.textAlign = "center";
+cantx.fillText("Hello World", can.width/2, can.height/2);
+
+function getinput(){
+    cantx.clearRect(0, 0, can.width, can.height);
+    let t = cantx.fillText(inputting.value, can.width/2, can.height/2);
+}

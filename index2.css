@@ -48,6 +48,28 @@ select {
     width: 77%;
 }
 
+#textinput{
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 10%;
+    font-size: larger;
+    padding: 1%;
+    width: 77%;
+}
+
+#textinput:active{
+    background-color: rgb(244, 233, 190);
+    border-radius: 5px;
+    margin: 2% 0 2% 10%;
+    font-size: larger;
+    padding: 1%;
+    width: 77%;
+}
+
+/* input[type="text"], textarea{
+    background-color: rgb(244, 233, 190);
+} */
+
 #div-color {
     display: flex;
     align-items: center;
@@ -166,6 +188,11 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#p-1{
+    width: auto;
+    height: auto;
 }
 
 /* #screen.brick {
