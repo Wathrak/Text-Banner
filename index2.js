@@ -201,16 +201,24 @@ function resetCustomization() {
 }
 
 // canvas
-var can = document.getElementById("p-1");
+var canvas = document.getElementById("p-1");
 var canbtn = document.getElementById("start-btn");
-var cantx = can.getContext("2d");
+var ctx = canvas.getContext("2d");
 var inputting = document.getElementById("textinput");
-cantx.fillStyle = "white";
-cantx.font = "30px Arial";
-cantx.textAlign = "center";
-cantx.fillText("Hello World", can.width/2, can.height/2);
+var dis = document.getElementById("div-1");
+var divHeight = document.getElementById("div-1").clientHeight;
+var divWidth = document.getElementById("div-1").clientWidth;
+// const textlength = ctx.measeureText(inputting);
+ctx.fillStyle = "white";
+ctx.font = "30px Arial";
+ctx.textAlign = "center";
+ctx.fillText("Welcome!!", canvas.width/2, canvas.height/2);
 
 function getinput(){
-    cantx.clearRect(0, 0, can.width, can.height);
-    let t = cantx.fillText(inputting.value, can.width/2, can.height/2);
+    canvas.width = divWidth;
+    canvas.height = divHeight;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillText(inputting.value, canvas.width/2, canvas.height/2);
+    console.log(divHeight);
+    console.log(divWidth);
 }

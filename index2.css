@@ -193,6 +193,14 @@ button {
 #p-1{
     width: auto;
     height: auto;
+    /* image-rendering: pixelated; */
+}
+
+#div-1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 /* #screen.brick {
