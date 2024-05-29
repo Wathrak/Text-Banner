@@ -14,3 +14,15 @@ function main() {
   swapText();
   console.log("Hello world!");
 }
+
+// const increase = document.querySelector('#increase');
+    // increase.addEventListener('click', function() {
+    //     size += 50;
+    //     document.getElementById("p-1").style.fontSize = `${size}px`;
+    // });
+
+    // const decrease = document.querySelector('#decrease');
+    // decrease.addEventListener('click', function() {
+    //     size -= 50;
+    //     document.getElementById("p-1").style.fontSize = `${size}px`;
+    // });
