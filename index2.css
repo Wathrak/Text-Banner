@@ -213,6 +213,7 @@ button {
     #main {
         display: block;
         overflow: auto;
+        width: 100vw;
     }
     #menu {
         display: none;
