@@ -182,7 +182,7 @@ function resetCustomization() {
     paragraph.textContent = defaultText; // Reset text content
 
     // Reset input values
-    document.getElementById('font-input').value = 200;
+    document.getElementById('font-input').value = 150;
     document.getElementById('coloring').value = defaultColor;
     document.getElementById('font').value = '1';
     document.getElementById('font-style').value = '1';
