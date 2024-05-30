@@ -20,6 +20,7 @@ body {
     background-color: violet;
     display: block;
     z-index: 10;
+    order: 1;
 }
 
 #customization {
@@ -203,6 +204,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    order: 2;
 }
 
 #p-1{
@@ -226,14 +228,10 @@ button {
         display: none;
     }
     #container {
-        order: 2;
         background-color: brown;
-                
+        order: 2;
     }
     #start {
         margin-top: 3%;
-    }
-    #screen {
-        order: 1;
     }
 }

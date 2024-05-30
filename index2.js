@@ -9,6 +9,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const div = document.getElementById('div-1');
     const p = document.getElementById('p-1');
     const container = document.getElementById('screen');
+    const main = document.getElementById('main');
+
+    const bubble = document.getElementById('bubble-div');
 
     const animation_run = document.querySelector('#start-btn');
     const fullscreen = document.querySelector('#fullscreen-btn');
@@ -48,14 +51,41 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Frame style change
     frameSelect.addEventListener('change', function() {
-        if (frameSelect.value === 'brick') {
-            container.style.backgroundImage = 'url(brick.jpg)';
-            container.style.backgroundSize = 'cover';
-        } else if (frameSelect.value === 'none') {
+         if (frameSelect.value === 'none') {
             container.style.backgroundImage = '';
             container.style.backgroundColor = bgColorInput.value || 'black';
-        } else {
+            container.classList.remove('rainbow');
+
+            main.removeChild(bubble);
+            main.appendChild(container);
+            bubble.style.display = 'none';
+         } else if (frameSelect.value === 'brick') {
+            container.style.backgroundImage = 'url(brick.jpg)';
+            container.style.backgroundSize = 'cover';
+            container.classList.remove('rainbow');
+
+            main.removeChild(bubble);
+            main.appendChild(container);
+            bubble.style.display = 'none';
+        } else if (frameSelect.value === 'rainbow') {
             container.style.backgroundImage = '';
+            container.classList.add('rainbow');
+
+            main.removeChild(bubble);
+            main.appendChild(container);
+            bubble.style.display = 'none';
+        } else if (frameSelect.value === 'bubble') {
+            bubble.style.display = 'flex';
+            main.removeChild(container);
+            main.appendChild(bubble);
+        }
+        else {
+            container.style.backgroundImage = '';
+            container.classList.remove('rainbow');
+
+            main.removeChild(bubble);
+            main.appendChild(container);
+            bubble.style.display = 'none';
         }
     });
 
@@ -165,7 +195,7 @@ function closeFullscreen() {
 
 // Default Text style
 const defaultText = 'Welcome!!';
-const defaultFontSize = '200px';
+const defaultFontSize = '150px';
 const defaultColor = '#ff0000'; // Default red color
 const defaultFontFamily = 'timenews';
 
