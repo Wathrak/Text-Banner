@@ -51,78 +51,40 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Frame style change
     frameSelect.addEventListener('change', function() {
-         if (frameSelect.value === 'none') {
-            container.style.backgroundImage = '';
-            container.style.backgroundColor = bgColorInput.value || 'black';
-
-            container.classList.remove('rainbow');
-            bubble.style.display = 'none';
-
-         } else if (frameSelect.value === 'brick') {
+        container.style.backgroundImage = '';
+        container.classList.remove('rainbow');
+        bubble.style.display = 'none';
+        if (frameSelect.value == 'brick') {
             container.style.backgroundImage = 'url(brick.jpg)';
             container.style.backgroundSize = 'cover';
-
-            container.classList.remove('rainbow');
-            bubble.style.display = 'none';
-
-        } else if (frameSelect.value === 'rainbow') {
-            container.style.backgroundImage = '';
+        } else if (frameSelect.value == 'rainbow') {
             container.classList.add('rainbow');
-
-            bubble.style.display = 'none';
-        } else if (frameSelect.value === 'bubble') {
+        } else if (frameSelect.value == 'bubble') {
             bubble.style.display = 'flex';
-            container.classList.remove('rainbow');
-            container.style.backgroundImage = '';
-        }
-        else {
-            container.style.backgroundImage = '';
-            container.classList.remove('rainbow');
-            bubble.style.display = 'none';
         }
     });
 
     // Font Family
     fontSelect.addEventListener('change', function() {
-        console.log(fontSelect.value);
-        console.log(p.classList);
-        if (fontSelect.value == 'polkadot') {
-            p.classList.remove('lobster');
-            p.classList.add('polkadot');
-            
-        }
-        else if (fontSelect.value == 'lobster') {
-            p.classList.remove('polkadot');
-            p.classList.add('lobster');
-        }
+        p.classList.remove('polkadot');
+        p.classList.remove('lobster');
+        p.classList.add(fontSelect.value);
     });
 
     // Font Style
     fontStyle.addEventListener('change', function() {
-
-        if (fontStyle.value == 'none') {
-            p.classList.remove('neon');
-            p.classList.remove('flame');
-        }
-        else if (fontStyle.value == 'neon') {
-            p.classList.add('neon');
-            p.classList.remove('flame');
-        }
-        else if (fontStyle.value == 'flame') {
-            p.classList.add('flame');
-            p.classList.remove('neon');
-        }
-        else if (fontStyle.value == '') {
-            p.classList.remove('flame');
-            p.classList.remove('neon');
-        }
-        
-        
+        p.classList.remove('neon');
+        p.classList.remove('flame');
+        p.classList.add(fontStyle.value);
     });
 
     // Animations
     animation.addEventListener('click', function() {
-        p.classList.toggle(animationStyle.value);
+        p.classList.remove('run');
+        p.classList.remove('flicker');
+        p.classList.remove('scale');
+        p.classList.remove('zigzag');
+        p.classList.add(animationStyle.value);
     });
 
     fullscreen.addEventListener('click', function() {
@@ -230,4 +192,9 @@ function resetCustomization() {
     container.style.backgroundImage = '';
     container.classList.remove('rainbow');
     bubble.style.display = 'none';
+
+    p.classList.remove('run');
+    p.classList.remove('flicker');
+    p.classList.remove('scale');
+    p.classList.remove('zigzag');
 }
