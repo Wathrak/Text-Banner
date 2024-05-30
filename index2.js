@@ -102,20 +102,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         if (fontStyle.value == 'none') {
             p.classList.remove('neon');
-            p.classList.remove('style-2');
+            p.classList.remove('flame');
         }
         else if (fontStyle.value == 'neon') {
             p.classList.add('neon');
-            p.classList.remove('style-2');
+            p.classList.remove('flame');
+        }
+        else if (fontStyle.value == 'flame') {
+            p.classList.add('flame');
+            p.classList.remove('neon');
         }
         else if (fontStyle.value == '') {
-            p.classList.add('style-2');
+            p.classList.remove('flame');
             p.classList.remove('neon');
         }
         
         
     });
 
+    // Animations
     animation.addEventListener('click', function() {
         p.classList.toggle(animationStyle.value);
     });
