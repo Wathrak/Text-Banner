@@ -72,7 +72,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Font Family
   font.addEventListener("change", function () {
-    const fonts = ["polkadot", "lobster", "montserrat", "courier", "franklin", "jacquard", "dancingScript", "danfo", "jacquard24", "shadows-into-light"];
+    const fonts = ["polkadot", "lobster", "montserrat", "courier", "franklin", 
+                    "jacquard", "dancingScript", "danfo", "jacquard24", "shadows-into-light"];
     fonts.forEach(font => p.classList.remove(font));
     if (font.value !== "1") {
       p.classList.add(font.value);
