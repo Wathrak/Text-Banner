@@ -3,12 +3,11 @@ let isFullscreen = false;
 let size = 200;
 let speed = 2;
 
-
 // Default Text style
 const defaultText = "Welcome!!";
 const defaultFontSize = "200px";
 const defaultColor = "#ff0000"; // Default red color
-const defaultFontFamily = "timenews";
+const defaultFontFamily = "timenew";
 
 // Start & Stop Animation
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -41,11 +40,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   });
   
-  //set default text styles
-    p.style.fontSize = defaultFontSize;
-    p.style.color = defaultColor;
-    p.classList.add(defaultFontFamily);
-    p.textContent = defaultText;
+  // Set default text styles
+  p.style.fontSize = defaultFontSize;
+  p.style.color = defaultColor;
+  p.classList.add(defaultFontFamily);
+  p.textContent = defaultText;
 
   // Font color
   color.addEventListener("input", function () {
@@ -54,7 +53,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Change bg color
   const bgColorInput = document.querySelector("#bgcoloring");
-
   bgColorInput.addEventListener("input", function () {
     container.style.backgroundColor = bgColorInput.value;
   });
@@ -74,120 +72,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Font Family
   font.addEventListener("change", function () {
-    if (font.value == "polkadot") {
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("polkadot");
-    } else if (font.value == "lobster") {
-      p.classList.remove("polkadot");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("lobster");
-    } else if (font.value == "montserrat") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("montserrat");
-    } else if (font.value == "courier") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("courier");
-    } else if (font.value == "franklin") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("franklin");
-    } else if (font.value == "jacquard") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("jacquard");
-    }
-    else if (font.value == "dancingScript") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("dancingScript");
-    }
-    else if (font.value == "danfo") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("jacquard24");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("danfo");
-    }
-    else if (font.value == "jacquard24") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("shadows-into-light");
-      p.classList.add("jacquard24");
-    }
-    else if (font.value == "shadows-into-light") {
-      p.classList.remove("polkadot");
-      p.classList.remove("lobster");
-      p.classList.remove("montserrat");
-      p.classList.remove("courier");
-      p.classList.remove("franklin");
-      p.classList.remove("jacquard");
-      p.classList.remove("dancingScript");
-      p.classList.remove("danfo");
-      p.classList.remove("jacquard24");
-      p.classList.add("shadows-into-light");
+    const fonts = ["polkadot", "lobster", "montserrat", "courier", "franklin", "jacquard", "dancingScript", "danfo", "jacquard24", "shadows-into-light"];
+    fonts.forEach(font => p.classList.remove(font));
+    if (font.value !== "1") {
+      p.classList.add(font.value);
     }
   });
 
@@ -229,6 +117,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 function Menu() {
   var container = document.getElementById("container");
+  var menu = document.getElementById("menu");
   if (menu.textContent == ">>") {
     menu.textContent = "<<";
     menu.style.transform = "translateX(0px)";
@@ -241,65 +130,84 @@ function Menu() {
 }
 
 function Fullscreen() {
+  var menu = document.getElementById("menu");
   if (!isFullscreen) {
     menu.style.transform = "translateX(-160px)";
     enterFullscreen();
     menu.textContent = ">>";
-    document.getElementById("container").style.display = "none";
+    isFullscreen = true;
   } else {
-    menu.style.transform = "translateX(0)";
-    closeFullscreen();
+    menu.style.transform = "translateX(0px)";
+    exitFullscreen();
+    menu.textContent = "<<";
+    isFullscreen = false;
   }
 }
 
 function enterFullscreen() {
   if (element.requestFullscreen) {
     element.requestFullscreen();
-  } else if (element.webkitRequestFullscreen) {
+  } else if (element.mozRequestFullScreen) { // Firefox
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
     element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) { // IE/Edge
+    element.msRequestFullscreen();
   }
-  isFullscreen = true;
-  document.body.classList.add("fullscreen");
 }
 
-function closeFullscreen() {
+function exitFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) {
+  } else if (document.mozCancelFullScreen) { // Firefox
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
     document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { // IE/Edge
+    document.msExitFullscreen();
   }
-  isFullscreen = false;
-  document.body.classList.remove("fullscreen");
 }
 
-
 function resetCustomization() {
-  // Reset the text style
-  const paragraph = document.getElementById("p-1");
-  const div = document.getElementById("div-1");
+  const p = document.getElementById("p-1");
   const container = document.getElementById("screen");
-  paragraph.style.fontSize = defaultFontSize;
-  paragraph.style.color = defaultColor;
-  paragraph.className = "p-1"; // Reset classes
-  paragraph.classList.add(defaultFontFamily);
-  paragraph.textContent = defaultText; // Reset text content
+  const div = document.getElementById("div-1");
+  const fontSizeInput = document.getElementById("font-input");
+  const colorInput = document.getElementById("coloring");
+  const bgColorInput = document.getElementById("bgcoloring");
+  const fontSelect = document.getElementById("font");
+  const fontStyleSelect = document.getElementById("font-style");
+  const frameSelect = document.getElementById("frame");
+  const animationStyleSelect = document.getElementById("animation-style");
 
-  // Reset input values
-  document.getElementById("font-input").value = 200;
-  document.getElementById("coloring").value = defaultColor;
-  document.getElementById("font").value = "1";
-  document.getElementById("font-style").value = "1";
-  document.getElementById("frame").value = "1"; // Reset to default "Frame Style"
-  document.getElementById("bgcoloring").value = "#000000"; // Reset background color picker
-  document.getElementById("animation-style").value = "1";
+  // Reset text content
+  p.textContent = defaultText;
 
-  // Remove animations
-  div.classList.remove("run");
-  div.classList.remove("flicker");
-  size = 200;
-  speed = 2;
+  // Reset font size
+  p.style.fontSize = defaultFontSize;
+  fontSizeInput.value = size;
 
-  // When reset, reset bg to black
-  container.style.backgroundColor = "black";
+  // Reset font color
+  p.style.color = defaultColor;
+  colorInput.value = defaultColor;
+
+  // Reset font family
+  p.className = defaultFontFamily;
+  fontSelect.value = "1";
+
+  // Reset font style
+  p.classList.remove("neon", "style-2");
+  fontStyleSelect.value = "1";
+
+  // Reset frame style
   container.style.backgroundImage = "";
+  frameSelect.value = "1";
+
+  // Reset background color
+  container.style.backgroundColor = "black";
+  bgColorInput.value = "#000000";
+
+  // Reset animation style
+  div.className = "";
+  animationStyleSelect.value = "1";
 }

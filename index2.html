@@ -4,45 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Banner</title>
-    <!-- <link rel="stylesheet" href="style1.css"> -->
-    <!-- <link rel="stylesheet" href="style2.css"> -->
-    <!-- <link rel="stylesheet" href="style3.css"> -->
-    
-    <script src="index2.js"></script>
-
     <link rel="stylesheet" href="index2.css">
     <link rel="stylesheet" href="text-style.css">
     <link rel="stylesheet" href="animation.css">
+    <script src="index2.js"></script>
 </head>
 <body>
     <div id="main">
-        <div class="" id="container">
+        <div id="container">
             <div class="custom-tab">
                 <h4 id="customization">Customization</h4>
                 <div>
                     <select name="font" id="font" placeholder="Font">
-                        <option value="1"disabled selected>Fonts</option>
+                        <option value="1" disabled selected>Fonts</option>
                         <option value="polkadot">Polkadot</option>
                         <option value="lobster">Lobster</option>
                         <option value="montserrat">Montserrat</option>
-                        <option value="courier" id="couriers">Courier</option>
-                        <option value="franklin" id="franklins">Franklin Gothic Medium</option>
-                        <option value="jacquard" id="jacquards">Jacquard</option>
-                        <option value="dancingScript" id="dancingScripts">DancingScript</option>
-                        <option value="danfo" id="danfo">Danfo</option>Jacquard+24
-                        <option value="jacquard24" id="jacquard24">Jacquard24</option>
-                        <option value="shadows-into-light" id="shadows-into-light">Shadows-into-light</option>
-                        <option value="timenew" id="timenews">Time New Roman</option>
+                        <option value="courier">Courier</option>
+                        <option value="franklin">Franklin Gothic Medium</option>
+                        <option value="jacquard">Jacquard</option>
+                        <option value="dancingScript">Dancing Script</option>
+                        <option value="danfo">Danfo</option>
+                        <option value="jacquard24">Jacquard24</option>
+                        <option value="shadows-into-light">Shadows-into-light</option>
+                        <option value="timenew">Times New Roman</option>
                     </select>
                 </div>
                 <div id="div-size">
-                    <input type="number" min="1" max="500" id="font-input" placeholder="Font Size"></option>
+                    <input type="number" min="1" max="500" id="font-input" placeholder="Font Size">
                 </div>
                 <div id="div-style">
                     <select name="font-style" id="font-style">
                         <option value="1" disabled selected>Font Style</option>
                         <option value="none">None</option>
                         <option value="neon">Neon</option>
+                        <option value="flame">Flame</option>
                     </select>
                 </div>
                 <div id="div-color">
@@ -52,20 +48,21 @@
                 <div id="div-frame">
                     <select name="frame" id="frame">
                         <option value="1" disabled selected>Frame Style</option>
-                        <option value="none" id="none">None</option>
-                        <option value="brick" id="brick">Brick</option>
-                        <option value="sky" id="sky">Sky</option>
+                        <option value="none">None</option>
+                        <option value="brick">Brick</option>
+                        <option value="sky">Sky</option>
                     </select>
                 </div>
-                <div id="div-bgcolor"> <!-- BG color picker -->
+                <div id="div-bgcolor">
                     <label for="bg-color" id="bg-color">BG Color:</label>
                     <input type="color" id="bgcoloring">
                 </div>
                 <div id="animation">
                     <select name="animation-style" id="animation-style">
                         <option value="1" disabled selected>Animation</option>
-                        <option value="run" class="">Run</option>
-                        <option value="flicker" class="">Flicker</option>
+                        <option value="none">None</option>
+                        <option value="run">Run</option>
+                        <option value="flicker">Flicker</option>
                     </select>
                 </div>
                 <div id="div-speed">
@@ -93,7 +90,6 @@
                 <p id="p-1" class="p-1 color" contenteditable="true" spellcheck="false">Welcome!!</p>
             </div>
         </div>
-
     </div>
 </body>
 </html>
