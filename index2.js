@@ -179,6 +179,9 @@ function resetCustomization() {
     paragraph.className = 'p-1'; // Reset classes
     paragraph.classList.add(defaultFontFamily);
     paragraph.textContent = defaultText; // Reset text content
+    const pctx = paragraph.getContext("2d");
+    pctx.clearRect(0, 0, canvas.width, canvas.height);
+    pctx.fillText("Welcome!!", canvas.width/2, canvas.height/1.7);
 
     // Reset input values
     document.getElementById('font-input').value = 200;
@@ -210,15 +213,19 @@ var divHeight = document.getElementById("div-1").clientHeight;
 var divWidth = document.getElementById("div-1").clientWidth;
 // const textlength = ctx.measeureText(inputting);
 ctx.fillStyle = "white";
-ctx.font = "30px Arial";
+ctx.font = "50px Arial";
 ctx.textAlign = "center";
-ctx.fillText("Welcome!!", canvas.width/2, canvas.height/2);
+ctx.fillText("Welcome!!", canvas.width/2, canvas.height/1.7);
 
 function getinput(){
-    canvas.width = divWidth;
-    canvas.height = divHeight;
+    // canvas.width = divWidth;
+    // canvas.height = divHeight;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillText(inputting.value, canvas.width/2, canvas.height/2);
+    ctx.fillText(inputting.value, canvas.width/2, canvas.height/1.7);
     console.log(divHeight);
     console.log(divWidth);
+}
+
+function update(){
+    
 }
