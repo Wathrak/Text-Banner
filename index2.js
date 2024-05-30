@@ -3,7 +3,7 @@ let isFullscreen = false;
 let size = 200;
 let speed = 2;
 
-// Start & Stop Animation
+// load Content
 window.addEventListener("DOMContentLoaded", (event) => {
 
     const div = document.getElementById('div-1');
@@ -11,9 +11,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const container = document.getElementById('screen');
     const main = document.getElementById('main');
 
-    const bubble = document.getElementById('bubble-div');
+    const bubble = document.getElementById('span-div');
 
-    const animation_run = document.querySelector('#start-btn');
+    const animation = document.querySelector('#start-btn');
     const fullscreen = document.querySelector('#fullscreen-btn');
     const animationStyle = document.querySelector('#animation-style');
     const fontStyle = document.querySelector('#font-style');
@@ -54,37 +54,30 @@ window.addEventListener("DOMContentLoaded", (event) => {
          if (frameSelect.value === 'none') {
             container.style.backgroundImage = '';
             container.style.backgroundColor = bgColorInput.value || 'black';
-            container.classList.remove('rainbow');
 
-            main.removeChild(bubble);
-            main.appendChild(container);
+            container.classList.remove('rainbow');
             bubble.style.display = 'none';
+
          } else if (frameSelect.value === 'brick') {
             container.style.backgroundImage = 'url(brick.jpg)';
             container.style.backgroundSize = 'cover';
-            container.classList.remove('rainbow');
 
-            main.removeChild(bubble);
-            main.appendChild(container);
+            container.classList.remove('rainbow');
             bubble.style.display = 'none';
+
         } else if (frameSelect.value === 'rainbow') {
             container.style.backgroundImage = '';
             container.classList.add('rainbow');
 
-            main.removeChild(bubble);
-            main.appendChild(container);
             bubble.style.display = 'none';
         } else if (frameSelect.value === 'bubble') {
             bubble.style.display = 'flex';
-            main.removeChild(container);
-            main.appendChild(bubble);
+            container.classList.remove('rainbow');
+            container.style.backgroundImage = '';
         }
         else {
             container.style.backgroundImage = '';
             container.classList.remove('rainbow');
-
-            main.removeChild(bubble);
-            main.appendChild(container);
             bubble.style.display = 'none';
         }
     });
@@ -123,22 +116,22 @@ window.addEventListener("DOMContentLoaded", (event) => {
         
     });
 
-    animation_run.addEventListener('click', function() {
-        div.classList.toggle(animationStyle.value);
+    animation.addEventListener('click', function() {
+        p.classList.toggle(animationStyle.value);
     });
 
     fullscreen.addEventListener('click', function() {
-        div.classList.add('run');
+        p.classList.add('run');
     });
 
     increase.addEventListener('click', function() {
         speed -= 0.5;
-        div.style.animationDuration = `${speed}s`;
+        p.style.animationDuration = `${speed}s`;
     });
 
     decrease.addEventListener('click', function() {
         speed += 0.5;
-        div.style.animationDuration = `${speed}s`;
+        p.style.animationDuration = `${speed}s`;
     });
 
     
@@ -210,6 +203,7 @@ function resetCustomization() {
     paragraph.className = 'p-1'; // Reset classes
     paragraph.classList.add(defaultFontFamily);
     paragraph.textContent = defaultText; // Reset text content
+    const bubble = document.getElementById('span-div');
 
     // Reset input values
     document.getElementById('font-input').value = 150;
@@ -229,4 +223,6 @@ function resetCustomization() {
     // When reset, reset bg to black
     container.style.backgroundColor = 'black';
     container.style.backgroundImage = '';
+    container.classList.remove('rainbow');
+    bubble.style.display = 'none';
 }
