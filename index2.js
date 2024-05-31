@@ -209,10 +209,7 @@ function resetCustomization() {
     bubble.style.display = 'none';
     removeSnowflakes();
 
-    p.classList.remove('run');
-    p.classList.remove('flicker');
-    p.classList.remove('scale');
-    p.classList.remove('zigzag');
+    p.classList.remove('run', 'flicker', 'scale', 'zigzag');
 }
 
 // snow flake function 
