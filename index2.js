@@ -170,7 +170,7 @@ function closeFullscreen() {
 
 // Default Text style
 const defaultText = 'Welcome!!';
-const defaultFontSize = '150px';
+const defaultFontSize = '200px';
 const defaultColor = '#ff0000'; // Default red color
 const defaultFontFamily = 'timenews';
 
@@ -188,7 +188,7 @@ function resetCustomization() {
     const bubble = document.getElementById('span-div');
 
     // Reset input values
-    document.getElementById('font-input').value = 150;
+    document.getElementById('font-input').value = 200;
     document.getElementById('coloring').value = defaultColor;
     document.getElementById('font').value = '1';
     document.getElementById('font-style').value = '1';
