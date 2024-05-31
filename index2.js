@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Initialize input values
     fontSizeInput.value = size;
+    color.value = defaultColor;
 
     // Font size input
     fontSizeInput.addEventListener('input', function() {
@@ -61,14 +62,28 @@ window.addEventListener("DOMContentLoaded", (event) => {
             container.classList.add('rainbow');
         } else if (frameSelect.value == 'bubble') {
             bubble.style.display = 'flex';
+        } else if (frameSelect.value === "snow") {
+         container.style.backgroundImage = "";
+         addSnowflakes();
+        } else if (frameSelect.value === "none") {
+          container.style.backgroundImage = "";
+          container.style.backgroundColor = bgColorInput.value || "black";
+          removeSnowflakes();
+        } else {
+          container.style.backgroundImage = "";
+          removeSnowflakes();
         }
     });
 
     // Font Family
-    fontSelect.addEventListener('change', function() {
-        p.classList.remove('polkadot');
-        p.classList.remove('lobster');
-        p.classList.add(fontSelect.value);
+    font.addEventListener("change", function () {
+      const fonts = ["polkadot", "lobster", "montserrat", "courier", "franklin", 
+                      "jacquard", "dancingScript", "danfo", "jacquard24", "shadows-into-light" ,
+                      "koulen" , "chenla" , "bayon" , "sleokchher"];
+      fonts.forEach(font => p.classList.remove(font));
+      if (font.value !== "1") {
+        p.classList.add(font.value);
+      }
     });
 
     // Font Style
@@ -192,9 +207,38 @@ function resetCustomization() {
     container.style.backgroundImage = '';
     container.classList.remove('rainbow');
     bubble.style.display = 'none';
+    removeSnowflakes();
 
     p.classList.remove('run');
     p.classList.remove('flicker');
     p.classList.remove('scale');
     p.classList.remove('zigzag');
 }
+
+// snow flake function 
+
+function addSnowflakes() {
+  const snowContainer = document.getElementById("snow-container");
+  snowContainer.innerHTML = ""; // Clear any existing snowflakes
+
+  for (let i = 0; i < 200; i++) { // Adjust the number of snowflakes as needed
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.style.left = Math.random() * 100 + "vw";
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+    snowflake.style.opacity = Math.random();
+    snowflake.style.width = snowflake.style.height = Math.random() * 7 + 3 + "px";
+    snowContainer.appendChild(snowflake);
+  }
+}
+
+function removeSnowflakes() {
+  const snowContainer = document.getElementById("snow-container");
+  snowContainer.innerHTML = ""; // Clear the snowflakes
+}
+
+  // Set default text styles
+  p.style.fontSize = defaultFontSize;
+  p.style.color = defaultColor;
+  p.classList.add(defaultFontFamily);
+  p.textContent = defaultText;
