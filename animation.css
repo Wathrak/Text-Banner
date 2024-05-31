@@ -145,11 +145,9 @@
 
 
 @media screen and (max-width: 1284px){
-  #bubble-div {
-    order: 1;
-  }
 
   #span-div span{
-    display: none;
+    /* display: none; */
+    
   }
 }
