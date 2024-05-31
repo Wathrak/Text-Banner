@@ -173,11 +173,21 @@
 
 
 @media screen and (max-width: 1284px){
-  #bubble-div {
-    order: 1;
+  #div-1 {
+    position: relative;
   }
 
-  #span-div span{
-    display: none;
+  @keyframes snowfall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(200vh);
+    }
+  }
+
+  @keyframes bubble {
+    0% { transform: translateY(200vh) scale(0); }
+    100% { transform: translateY(-10vh) scale(1); }
   }
 }

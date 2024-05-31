@@ -55,6 +55,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         container.style.backgroundImage = '';
         container.classList.remove('rainbow');
         bubble.style.display = 'none';
+        removeSnowflakes();
         if (frameSelect.value == 'brick') {
             container.style.backgroundImage = 'url(brick.jpg)';
             container.style.backgroundSize = 'cover';
@@ -68,9 +69,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         } else if (frameSelect.value === "none") {
           container.style.backgroundImage = "";
           container.style.backgroundColor = bgColorInput.value || "black";
-          removeSnowflakes();
-        } else {
-          container.style.backgroundImage = "";
           removeSnowflakes();
         }
     });
