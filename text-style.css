@@ -1,4 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Courier+Prime);
+@import url(https://fonts.googleapis.com/css2?family=Libre+Franklin);
+@import url(https://fonts.googleapis.com/css2?family=Jacquard+12);
+@import url(https://fonts.googleapis.com/css2?family=Dancing+Script);
+@import url(https://fonts.googleapis.com/css2?family=Danfo);
+@import url(https://fonts.googleapis.com/css2?family=Jacquard+24+Charted);
+@import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light);
+@import url(https://fonts.googleapis.com/css2?family=Koulen);
+@import url(https://fonts.googleapis.com/css2?family=Chenla);
+@import url(https://fonts.googleapis.com/css2?family=Bayon);
+@import url(https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher);
+
+
+
 @font-face {
     font-family: polkadot;
     src: url(PolkaDots-Regular.ttf);
@@ -6,7 +21,7 @@
 
 /* Original */
 #p-1 {
-    font-size: 150px;
+    font-size: 200px;
     white-space: nowrap;
     text-align: center;
 }
@@ -16,10 +31,87 @@
     font-family: polkadot;
 }
 
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 2  00;
+  font-style: normal;
+}
+
 .lobster {
     /* color: rgb(255, 150, 150); */
     font-family: lobster;
     text-shadow: 2px 6px 2px rgb(255, 255, 255);
+}
+
+.courier {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.franklin {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+}
+
+.jacquard {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dancingScript {
+font-family: "Dancing Script", cursive;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+}
+
+.danfo {
+  font-family: "Danfo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "ELSH" 0;
+}
+  
+.jacquard24 {
+    font-family: "Jacquard 24 Charted", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.shadows-into-light {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .koulen {
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .chenla {
+    font-family: "Chenla", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .bayon {
+    font-family: "Bayon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+ .sleokchher {
+  font-family: "Konkhmer Sleokchher", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Text Color */
