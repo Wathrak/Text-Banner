@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=Lobster);
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Courier+Prime);
 @import url(https://fonts.googleapis.com/css2?family=Libre+Franklin);
@@ -13,17 +12,18 @@
 @import url(https://fonts.googleapis.com/css2?family=Bayon);
 @import url(https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher);
 
+
+
 @font-face {
     font-family: polkadot;
     src: url(PolkaDots-Regular.ttf);
 }
 
 /* Original */
-.p-1 {
+#p-1 {
     font-size: 200px;
     white-space: nowrap;
     text-align: center;
-    font-family: none;
 }
 
 /* Font Name */
@@ -32,11 +32,11 @@
 }
 
 .montserrat {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 2  00;
-    font-style: normal;
-  }
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 2  00;
+  font-style: normal;
+}
 
 .lobster {
     /* color: rgb(255, 150, 150); */
@@ -45,29 +45,29 @@
 }
 
 .courier {
-    font-family: "Courier Prime", monospace;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-.franklin {
-    font-family: "Libre Franklin", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 150;
-    font-style: normal;
-  }
-
-.jacquard {
-    font-family: "Jacquard 12", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-.dancingScript {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
+  font-family: "Courier Prime", monospace;
   font-weight: 400;
   font-style: normal;
+}
+
+.franklin {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+}
+
+.jacquard {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dancingScript {
+font-family: "Dancing Script", cursive;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
 }
 
 .danfo {
@@ -133,3 +133,81 @@
         0 0 151px rgb(217, 0, 255);
 }  
 
+.flame {
+    color: #ffae42;
+    position: relative;
+    animation: color-change 3s infinite;
+    text-shadow: 
+        0 0 10px #ffae42,
+        0 0 20px #ffae42,
+        0 0 30px #ff4500,
+        0 0 40px #ff4500,
+        0 0 50px #ff4500,
+        0 0 60px #ff4500,
+        0 0 70px #ff4500;
+}
+
+.flame::before, .flame-text::after {
+    content: 'FLAME';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    background: linear-gradient(transparent, rgb(183, 0, 255), transparent);
+    mix-blend-mode: color-dodge;
+    filter: blur(15px);
+    animation: flame-flicker 1.5s infinite ease-in-out;
+}
+
+.flame::after {
+    animation-delay: 0.75s;
+}
+
+@keyframes flame-flicker {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: #ffae42;
+        text-shadow: 
+            0 0 10px #ffae42,
+            0 0 20px #ffae42,
+            0 0 30px #ff4500,
+            0 0 40px #ff4500,
+            0 0 50px #ff4500,
+            0 0 60px #ff4500,
+            0 0 70px #ff4500;
+    }
+    50% {
+        color: #ff4500;
+        text-shadow: 
+            0 0 10px #ff4500,
+            0 0 20px #ff4500,
+            0 0 30px #ffae42,
+            0 0 40px #ffae42,
+            0 0 50px #ffae42,
+            0 0 60px #ffae42,
+            0 0 70px #ffae42;
+    }
+    100% {
+        color: #ffae42;
+        text-shadow: 
+            0 0 10px #ffae42,
+            0 0 20px #ffae42,
+            0 0 30px #ff4500,
+            0 0 40px #ff4500,
+            0 0 50px #ff4500,
+            0 0 60px #ff4500,
+            0 0 70px #ff4500;
+    }
+}

@@ -6,16 +6,35 @@
     animation-play-state: running;
 } 
 
+.scale {
+  animation: scale 3s linear infinite;
+  animation-play-state: running;
+}
+
 .rainbow {
-    animation: flickering 2s linear infinite;
+    animation: rainbow 4s linear infinite;
     animation-play-state: running;
 } 
 
+.zigzag {
+  animation: zigzag 10s linear infinite;
+}
 
+@keyframes zigzag {
+  from { transform: rotate(0deg) rotateX(45deg) rotate(360deg); }
+  to { transform: rotate(360deg) rotateX(45deg) rotate(0deg); }
+}
+
+@keyframes scale {
+    0% { transform: scale(1); }
+    33% { transform: scale(0.5); }
+    66% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
 
 @keyframes run {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-150%); }
+  from { transform: translateX(200%); }
+  to { transform: translateX(-200%); }
 }
 
 .flicker {
@@ -54,14 +73,8 @@
 }
 
 
-/* Rainbow */
+/* Rainbow */  
 @keyframes rainbow {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-
-  
-@keyframes animate-background {
     0% {
       /* background-position: 0% 0; */
       background-color: red;
@@ -91,7 +104,7 @@
       }
   }
 
-  @keyframes snowfall {
+@keyframes snowfall {
     0% {
       transform: translateY(0);
     }
@@ -120,3 +133,51 @@
     overflow: hidden;
     pointer-events: none; /* Allow clicks to pass through */
   }
+
+#span-div {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  flex-wrap: wrap;
+}
+
+
+#span-div span{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #4fc4dc,
+  0 0 100px #4fc3dc;
+  animation: bubble 15s linear infinite;
+  animation-duration: calc(15s / var(--i));
+  flex: 1 0 1%;
+}
+
+#span-div span:nth-child(even) {
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544,
+  0 0 50px #ff2d75,
+  0 0 100px #ff2d75;
+}
+
+@keyframes bubble {
+  0% { transform: translateY(100vh) scale(0); }
+  100% { transform: translateY(-10vh) scale(1); }
+}
+
+
+
+@media screen and (max-width: 1284px){
+  #bubble-div {
+    order: 1;
+  }
+
+  #span-div span{
+    display: none;
+  }
+}
