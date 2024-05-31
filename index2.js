@@ -42,9 +42,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // Change bg color
     const bgColorInput = document.querySelector('#bgcoloring');
 
+
     bgColorInput.addEventListener('input', function() {
         container.style.backgroundColor = bgColorInput.value;
     });
+
+    // //change font color
+    // color.addEventListener('input', function() {
+    //     ctx.fillStyle = color.value;
+    // });
 
     // Frame style change
     frameSelect.addEventListener('change', function() {
@@ -181,7 +187,7 @@ function resetCustomization() {
     paragraph.textContent = defaultText; // Reset text content
     const pctx = paragraph.getContext("2d");
     pctx.clearRect(0, 0, canvas.width, canvas.height);
-    pctx.fillText("Welcome!!", canvas.width/2, canvas.height/1.7);
+    pctx.fillText("Welcome!!", canvas.width/2/window.devicePixelRatio, canvas.height/1.7/window.devicePixelRatio);
 
     // Reset input values
     document.getElementById('font-input').value = 200;
@@ -204,28 +210,46 @@ function resetCustomization() {
 }
 
 // canvas
+const color = document.querySelector('#coloring');
+const fontSelect = document.querySelector('#font');
+const fontSizeInput = document.getElementById('font-input');
 var canvas = document.getElementById("p-1");
 var canbtn = document.getElementById("start-btn");
 var ctx = canvas.getContext("2d");
 var inputting = document.getElementById("textinput");
 var dis = document.getElementById("div-1");
-var divHeight = document.getElementById("div-1").clientHeight;
-var divWidth = document.getElementById("div-1").clientWidth;
+canvas.width = dis.clientWidth * window.devicePixelRatio;
+canvas.height = dis.clientHeight * window.devicePixelRatio;
+ratio = window.devicePixelRatio;
+ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+x = canvas.width/2/window.devicePixelRatio;
+y = canvas.height/1.7/window.devicePixelRatio;
+// var divHeight = document.getElementById("div-1").clientHeight * window.devicePixelRatio;
+// var divWidth = document.getElementById("div-1").clientWidth * window.devicePixelRatio;
 // const textlength = ctx.measeureText(inputting);
-ctx.fillStyle = "white";
-ctx.font = "50px Arial";
+ctx.fillStyle = 'white';
+ctx.font = "100pt Arial";
 ctx.textAlign = "center";
-ctx.fillText("Welcome!!", canvas.width/2, canvas.height/1.7);
+ctx.fillText("Welcome!!", canvas.width/2/window.devicePixelRatio, canvas.height/1.7/window.devicePixelRatio);
+
+// function resizer(){
+//     canvas.width = dis.clientWidth * window.devicePixelRatio;
+//     canvas.height = dis.clientHeight * window.devicePixelRatio;
+//     ratio = window.devicePixelRatio;
+//     canvas.scale(ratio, ratio);
+//     x = canvas.width/1.3/window.devicePixelRatio;
+//     y = canvas.height/1.15/window.devicePixelRatio;
+// }
 
 function getinput(){
-    // canvas.width = divWidth;
-    // canvas.height = divHeight;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillText(inputting.value, canvas.width/2, canvas.height/1.7);
-    console.log(divHeight);
-    console.log(divWidth);
-}
-
-function update(){
-    
+    ctx.fillStyle = color.value;
+    ctx.font = fontSizeInput.value + 'pt' + fontSelect.value;
+    ctx.fillText(inputting.value, x, y);
+    // console.log(divHeight);
+    // console.log(divWidth);
+    console.log(inputting.value);
+    console.log(color.value);
+    console.log(fontSelect.value);
+    console.log(fontSizeInput.value);
 }
