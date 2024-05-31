@@ -8,6 +8,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Danfo);
 @import url(https://fonts.googleapis.com/css2?family=Jacquard+24+Charted);
 @import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light);
+@import url(https://fonts.googleapis.com/css2?family=Koulen);
+@import url(https://fonts.googleapis.com/css2?family=Chenla);
+@import url(https://fonts.googleapis.com/css2?family=Bayon);
+@import url(https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher);
+
 @font-face {
     font-family: polkadot;
     src: url(PolkaDots-Regular.ttf);
@@ -85,6 +90,30 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  .koulen {
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .chenla {
+    font-family: "Chenla", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .bayon {
+    font-family: "Bayon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+ .sleokchher {
+  font-family: "Konkhmer Sleokchher", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Text Color */
 .color {
     color: red;
