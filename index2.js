@@ -57,18 +57,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
     container.style.backgroundColor = bgColorInput.value;
   });
 
-  // Frame style change
+  // frame style
   frameSelect.addEventListener("change", function () {
     if (frameSelect.value === "brick") {
       container.style.backgroundImage = "url(brick.jpg)";
       container.style.backgroundSize = "cover";
+      removeSnowflakes();
+    } else if (frameSelect.value === "snow") {
+      container.style.backgroundImage = "";
+      addSnowflakes();
     } else if (frameSelect.value === "none") {
       container.style.backgroundImage = "";
       container.style.backgroundColor = bgColorInput.value || "black";
+      removeSnowflakes();
     } else {
       container.style.backgroundImage = "";
+      removeSnowflakes();
     }
   });
+
 
   // Font Family
   font.addEventListener("change", function () {
@@ -212,4 +219,30 @@ function resetCustomization() {
   // Reset animation style
   div.className = "";
   animationStyleSelect.value = "1";
+
+  removeSnowflakes();
 }
+
+
+
+// snow flake function 
+
+function addSnowflakes() {
+    const snowContainer = document.getElementById("snow-container");
+    snowContainer.innerHTML = ""; // Clear any existing snowflakes
+
+    for (let i = 0; i < 200; i++) { // Adjust the number of snowflakes as needed
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+      snowflake.style.opacity = Math.random();
+      snowflake.style.width = snowflake.style.height = Math.random() * 7 + 3 + "px";
+      snowContainer.appendChild(snowflake);
+    }
+  }
+
+  function removeSnowflakes() {
+    const snowContainer = document.getElementById("snow-container");
+    snowContainer.innerHTML = ""; // Clear the snowflakes
+  }
