@@ -1,157 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Banner</title>
-    <!-- <link rel="stylesheet" href="style1.css"> -->
-    <!-- <link rel="stylesheet" href="style2.css"> -->
-    <!-- <link rel="stylesheet" href="style3.css"> -->
-    
-
-    <link rel="stylesheet" href="index2.css">
-    <link rel="stylesheet" href="text-style.css">
-    <link rel="stylesheet" href="animation.css">
-</head>
-<body>
-    <div id="main">
-        <div id="screen">
-            <button id="menu" onclick="Menu()"><<</button>
-            <div id="div-1">
-                <p id="p-1" class="p-1 color" contenteditable="true" spellcheck="false">Welcome!!</p>
-
-                <div id="span-div">
-                    <span style="--i:11"></span>
-                    <span style="--i:17"></span>
-                    <span style="--i:24"></span>
-                    <span style="--i:10"></span>
-                    <span style="--i:14"></span>
-                    <span style="--i:23"></span>
-                    <span style="--i:18"></span>
-                    <span style="--i:16"></span>
-                    <span style="--i:19"></span>
-                    <span style="--i:20"></span>
-                    <span style="--i:22"></span>
-                    <span style="--i:25"></span>
-                    <span style="--i:18"></span>
-                    <span style="--i:21"></span>
-                    <span style="--i:15"></span>
-                    <span style="--i:26"></span>
-                    <span style="--i:17"></span>
-                    <span style="--i:13"></span>
-                    <span style="--i:12"></span>
-                    <span style="--i:21"></span>
-                    <span style="--i:23"></span>
-                    <span style="--i:27"></span>
-                    <span style="--i:12"></span>
-                    <span style="--i:14"></span>
-                    <span style="--i:18"></span>
-                    <span style="--i:23"></span>
-                    <span style="--i:29"></span>
-                    <span style="--i:9"></span>
-                    <span style="--i:7"></span>
-                    <span style="--i:15"></span>
-                    <span style="--i:16"></span>
-                    <span style="--i:22"></span>
-                    <span style="--i:25"></span>
-                    <span style="--i:18"></span>
-                    <span style="--i:21"></span>
-                    <span style="--i:15"></span>
-                    <span style="--i:26"></span>
-                    <span style="--i:17"></span>
-                    <span style="--i:18"></span>
-                    <span style="--i:21"></span>
-                    <span style="--i:15"></span>
-                    <span style="--i:26"></span>
-                </div>
-                <div id="snow-container"></div>
-            </div>
-        </div>
-        
-        <div class="" id="container">
-            <div class="custom-tab">
-                <h4 id="customization">Customization</h4>
-                <div>
-                    <select name="font" id="font" placeholder="Font">
-                        <option value="1"disabled selected>Fonts</option>
-                        <option value="polkadot">Polkadot</option>
-                        <option value="lobster">Lobster</option>
-                        <option value="montserrat">Montserrat</option>
-                        <option value="courier">Courier</option>
-                        <option value="franklin">Franklin Gothic Medium</option>
-                        <option value="jacquard">Jacquard</option>
-                        <option value="dancingScript">Dancing Script</option>
-                        <option value="danfo">Danfo</option>
-                        <option value="jacquard24">Jacquard24</option>
-                        <option value="shadows-into-light">Shadows-into-light</option>
-                        <option value="koulen">Khmer-Koulen</option>
-                        <option value="chenla">Khmer-Chenla</option>
-                        <option value="bayon">Khmer-Bayon</option>
-                        <option value="sleokchher">Khmer-Sleokchher</option>
-                        <option value="timenew">Times New Roman</option>
-                    </select>
-                </div>
-                <div id="div-size">
-                    <input type="number" min="1" max="500" id="font-input" placeholder="Font Size"></option>
-                </div>
-                <div id="div-style">
-                    <select name="font-style" id="font-style">
-                        <option value="1" disabled selected>Font Style</option>
-                        <option value="none">None</option>
-                        <option value="neon">Neon</option>
-                        <option value="flame">Flame</option>
-                    </select>
-                </div>
-                <div id="div-color">
-                    <label for="font-color" id="font-color">Font Color:</label>
-                    <input type="color" id="coloring">
-                </div>
-                <div id="div-frame">
-                    <select name="frame" id="frame">
-                        <option value="1" disabled selected>Frame Style</option>
-                        <option value="none" id="none">None</option>
-                        <option value="brick" id="brick">Brick</option>
-                        <option value="rainbow" id="rainbow">Rainbow</option>
-                        <option value="bubble">Bubble</option>
-                        <option value="snow">Snowfall</option>
-                    </select>
-                </div>
-                <div id="div-bgcolor"> <!-- BG color picker -->
-                    <label for="bg-color" id="bg-color">BG Color:</label>
-                    <input type="color" id="bgcoloring">
-                </div>
-                <div id="animation">
-                    <select name="animation-style" id="animation-style">
-                        <option value="1" disabled selected>Animation</option>
-                        <option value="run" class="">Run</option>
-                        <option value="flicker" class="">Flicker</option>
-                        <option value="scale">Scale</option>
-                        <option value="zigzag">Zigzag</option>
-                    </select>
-                </div>
-                <div id="div-speed">
-                    <label for="animation-speed" id="animation-speed">Animation Speed:</label>
-                    <div id="btn-speed">
-                        <button id="increase">Increase</button>
-                        <button id="decrease">Decrease</button>
-                    </div>
-                </div>
-                <div id="fullscreen">
-                    <button id="fullscreen-btn" onclick="Fullscreen()">Fullscreen</button>
-                </div>
-                <div id="start">
-                    <button id="start-btn" onclick="getinput()">Starts</button>
-                </div>
-                <div id="reset">
-                    <button id="reset-btn">Reset</button>
-                </div>
-            </div>
-        </div>
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE TEXT BOARD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="function.js"></script>
+    <link rel="stylesheet" href="btn.css" id="btn" />
+    <link rel="stylesheet" href="style1.css" id="style1" />
+    <!-- <link rel="stylesheet" href="style2.css" id="style2" disabled> -->
+    <!-- <link rel="stylesheet" href="style3.css" id="style3" disabled> -->
+  </head>
+  <body id="body">
+    <div id="button-container">
+      <h1>Text Note KH</h1>
+      <button id="btn-fullscreen" onclick="Fullscreen()">Full Screen</button>
+      <button id="btn-1" class="" onclick="Toggle()">Scroll</button>
+      <button id="btn-font">Font</button>
+      <button id="btn-size">Size</button>
+      <button id="btn-increase" onclick="fontIncrease()">Increase</button>
+      <button id="btn-decrease" onclick="fontDecrease()">Decrease</button>
+      <button id="btn-color">Color</button>
+      <button id="btn-style" onclick="switchStyle()">Style</button>
+      <button id="btn-2" class="" onclick="Flicker()">Flicker</button>
+      <button id="btn-reset" class="" onclick="reset()">Reset</button>
     </div>
 
-    <script src="index2.js"></script>
-
-</body>
+    <div id="div-1">
+      <p id="p-1" contenteditable="true" spellcheck="false">
+        Input your text!!
+      </p>
+    </div>
+  </body>
 </html>
