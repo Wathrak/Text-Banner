@@ -1,92 +1,21 @@
+@keyframes run {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
 
-/* Animations */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      opacity: 1;
+  }
+  20%, 24%, 55% {
+      opacity: 0;
+  }
+}
 
 .run {
-    animation: run 3s linear infinite;
-    animation-play-state: running;
-} 
-
-.rainbow {
-    animation: flickering 2s linear infinite;
-    animation-play-state: running;
-} 
-
-
-
-@keyframes run {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-150%); }
+  animation: run 5s linear infinite;
 }
 
 .flicker {
-    animation: flicker 2s linear infinite;
-    animation-play-state: running;
-} 
-
-@keyframes flicker {
-    0% { 
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px rgb(217, 0, 255),
-        0 0 82px rgb(217, 0, 255),
-        0 0 92px rgb(217, 0, 255),
-        0 0 102px rgb(217, 0, 255);
-     }
-     50% {
-    text-shadow:
-        0 0 7px #fff,
-        0 0 42px rgb(217, 0, 255),
-        0 0 82px rgb(217, 0, 255);
-    }
-    100% {
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px rgb(217, 0, 255),
-            0 0 82px rgb(217, 0, 255),
-            0 0 92px rgb(217, 0, 255),
-            0 0 102px rgb(217, 0, 255);
-         }
-     
+  animation: flicker 0.15s infinite;
 }
-
-
-/* Rainbow */
-@keyframes rainbow {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-
-  
-@keyframes animate-background {
-    0% {
-      /* background-position: 0% 0; */
-      background-color: red;
-    }
-    14.3% {
-      /* background-position: 100% 0; */
-      background-color: orange;
-    }
-    28.6% {
-        /* background-position: 0% 0; */
-        background-color: yellow;
-      }
-    42.9% {
-        background-color: green;
-      }
-    57.6% {
-        background-color: blue;
-      }
-    71.5% {
-        background-color: indigo;
-      }
-    85.8% {
-        background-color: violet;
-      }
-    100% {
-        background-color: #f00;
-      }
-  }
