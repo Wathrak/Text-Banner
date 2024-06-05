@@ -217,7 +217,7 @@ var canvas = document.getElementById("p-1");
 var canbtn = document.getElementById("start-btn");
 var ctx = canvas.getContext("2d");
 var inputting = document.getElementById("textinput");
-var dis = document.getElementById("div-1");
+var dis = document.getElementById("screen");
 canvas.width = dis.clientWidth * window.devicePixelRatio;
 canvas.height = dis.clientHeight * window.devicePixelRatio;
 ratio = window.devicePixelRatio;
@@ -228,18 +228,18 @@ y = canvas.height/1.7/window.devicePixelRatio;
 // var divWidth = document.getElementById("div-1").clientWidth * window.devicePixelRatio;
 // const textlength = ctx.measeureText(inputting);
 ctx.fillStyle = 'white';
-ctx.font = "100pt Arial";
+ctx.font = "50pt Arial";
 ctx.textAlign = "center";
-ctx.fillText("Welcome!!", canvas.width/2/window.devicePixelRatio, canvas.height/1.7/window.devicePixelRatio);
+ctx.fillText("Welcome!!", canvas.width/2/window.devicePixelRatio, canvas.height/2/window.devicePixelRatio);
 
-// function resizer(){
-//     canvas.width = dis.clientWidth * window.devicePixelRatio;
-//     canvas.height = dis.clientHeight * window.devicePixelRatio;
-//     ratio = window.devicePixelRatio;
-//     canvas.scale(ratio, ratio);
-//     x = canvas.width/1.3/window.devicePixelRatio;
-//     y = canvas.height/1.15/window.devicePixelRatio;
-// }
+function resizer(){
+    canvas.width = dis.clientWidth * window.devicePixelRatio;
+    canvas.height = dis.clientHeight * window.devicePixelRatio;
+    ratio = window.devicePixelRatio;
+    canvas.scale(ratio, ratio);
+    x = canvas.width/1.3/window.devicePixelRatio;
+    y = canvas.height/1.15/window.devicePixelRatio;
+}
 
 function getinput(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
