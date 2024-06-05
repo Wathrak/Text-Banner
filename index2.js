@@ -237,8 +237,8 @@ function resizer(){
     canvas.height = dis.clientHeight * window.devicePixelRatio;
     ratio = window.devicePixelRatio;
     canvas.scale(ratio, ratio);
-    x = canvas.width/1.3/window.devicePixelRatio;
-    y = canvas.height/1.15/window.devicePixelRatio;
+    x = canvas.width/2/window.devicePixelRatio;
+    y = canvas.height/2/window.devicePixelRatio;
 }
 
 function getinput(){
