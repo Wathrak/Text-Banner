@@ -153,17 +153,11 @@ button {
     left: 20%;
 }
 
-#start-btn {
-    padding: 1% 10% 1% 11%;
-    margin-bottom: 5%;
-    position: relative;
-    left: 20%;
-    margin-top: 30%;
-}
 
 #reset {
     position: relative;
     left: 20%;
+    margin-top : 40%;
     /* margin-top: 70%; */
 }
 
