@@ -223,7 +223,7 @@ canvas.height = dis.clientHeight * window.devicePixelRatio;
 ratio = window.devicePixelRatio;
 ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 x = canvas.width/2/window.devicePixelRatio;
-y = canvas.height/1.7/window.devicePixelRatio;
+y = canvas.height/2/window.devicePixelRatio;
 // var divHeight = document.getElementById("div-1").clientHeight * window.devicePixelRatio;
 // var divWidth = document.getElementById("div-1").clientWidth * window.devicePixelRatio;
 // const textlength = ctx.measeureText(inputting);
