@@ -157,8 +157,7 @@ button {
 #reset {
     position: relative;
     left: 20%;
-    margin-top : 40%;
-    /* margin-top: 70%; */
+    margin-top: 40%; 
 }
 
 #menu {
@@ -176,6 +175,8 @@ button {
 }
 
 #screen {
+    width: auto;
+    height: auto;
     flex: 3;
     background-color: black;
     overflow: hidden;
@@ -184,18 +185,26 @@ button {
     align-items: center;
 }
 
-#p-1{
+/* #start-btn {
+    padding: 1% 10% 1% 11%;
+    margin-bottom: 5%;
+    position: relative;
+    left: 20%;
+    margin-top: 30%;
+} */
+
+/* #p-1{
     width: 300px;
     height: 150px;
-    /* image-rendering: pixelated; */
-}
+    image-rendering: pixelated;
+} */
 
-#div-1{
-    width: 100%;
+/* #div-1{
+    width: auto;
     height: auto;
     display: flex;
     justify-content: center;
-}
+} */
 
 /* #screen.brick {
     background-image: url('brick.jpg');
