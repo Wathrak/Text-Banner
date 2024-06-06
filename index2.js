@@ -201,8 +201,8 @@ const inputting = document.getElementById("textinput");
 const resetButton = document.getElementById("reset-btn");
 const canvas = document.getElementById("p-1");
 const ctx = canvas.getContext("2d");
-var x = canvas.width / 2 / window.devicePixelRatio;
-var y = canvas.height / 2 / window.devicePixelRatio;
+let x = canvas.width / 2 / window.devicePixelRatio;
+let y = canvas.height / 2 / window.devicePixelRatio;
 
 let defaultText = "Welcome!!";
 let defaultFontSize = 50; // Adjusted to match the initial canvas font size
@@ -260,36 +260,72 @@ resetButton.addEventListener("click", () => {
 //   }, 10);
 // }
 
-// function LeftToRight() {
-//   var step = 0;
-//   var steps = canvas.width + 50;
+function LeftToRight() {
+  let step = 0;
+  let steps = canvas.width / 2 / window.devicePixelRatio + 50;
+
+  // step++;
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // ctx.save();
+  // ctx.translate(step, y / 2);
+  // drawText();
+  // ctx.restore();
+  // if (step = steps)
+  //   step = -50;
+  // if (step < steps)
+  //   var t = setTimeout('LeftToRight()', 5);
+  // console.log(step.value);
+
+  step++;
+  ctx.translate(step, canvas.height / 2 / window.devicePixelRatio);
+  if (step == steps)
+    step = -50;
+  else if (step < steps)
+    var t = setTimeout('LeftToRight()', 1000);
+  console.log(step);
+  console.log(steps);
+  console.log(canvas.width / 2 / window.devicePixelRatio);
+}
+
+// function TopToBottom() {
+//   let step = 0;
+//   let steps = y + 50;
+
+//   // step++;
+//   // ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   // ctx.save();
+//   // ctx.translate(step, y / 2);
+//   // drawText();
+//   // ctx.restore();
+//   // if (step = steps)
+//   //   step = -50;
+//   // if (step < steps)
+//   //   var t = setTimeout('LeftToRight()', 5);
+//   // console.log(step.value);
 
 //   step++;
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-//   ctx.save();
-//   ctx.translate(step, canvas.height /2);
-//   drawText();
-//   ctx.restore();
+//   ctx.translate(x, step);
 //   if (step = steps)
 //     step = -50;
 //   if (step < steps)
-//     var t = setTimeout('LeftToRight()', delay);
+//     var t = setTimeout('LeftToRight()', 50);
+//   console.log(step.value);
 // }
 
-function scroll_animation() {
-  // Looping animation
-  requestAnimationFrame(scroll_animation); // loop
+// function scroll_animation() {
+//   // Looping animation
+//   requestAnimationFrame(scroll_animation); // loop
 
-  // Wrap around if x exceeds canvas width
-  if (x - ctx.measureText(inputting.value).width / 2 > canvas.width) {
-    x = -(canvas.width + ctx.measureText(inputting.value).width) / 2;
-  }
+//   // Wrap around if x exceeds canvas width
+//   if (x - ctx.measureText(inputting.value).width / 2 > canvas.width) {
+//     x = -(canvas.width + ctx.measureText(inputting.value).width) / 2;
+//   }
 
-  x += 1;
+//   x += 50;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawText();
-}
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   drawText();
+// }
 
 let anime = document.getElementById("animation-style");
 
@@ -298,9 +334,8 @@ anime.addEventListener("change", function(){
 
   switch (animating) {
     case "run":
-      scroll_animation();
+      LeftToRight();
       console.log("It works");
-      console.log(scroll_animation());
       break;
     case "flicker":
       console.log("It works");
@@ -309,3 +344,5 @@ anime.addEventListener("change", function(){
       break;
   }
 });
+
+console.log(x);
