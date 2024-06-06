@@ -174,7 +174,7 @@ function resetCustomization() {
   );
 
   // Reset input values
-  document.getElementById("font-input").value = 200;
+  document.getElementById("font-input").value = 100;
   document.getElementById("coloring").value = defaultColor;
   document.getElementById("font").value = "1";
   document.getElementById("font-style").value = "1";
@@ -193,11 +193,14 @@ function resetCustomization() {
   container.style.backgroundImage = "";
 }
 
+
+
 const container = document.getElementById("screen");
 const fontSizeInput = document.getElementById("font-input");
 const colorInput = document.getElementById("coloring");
 const fontSelect = document.getElementById("font");
 const inputting = document.getElementById("textinput");
+const fontStyle = document.getElementById("font-style");
 const resetButton = document.getElementById("reset-btn");
 const canvas = document.getElementById("p-1");
 const ctx = canvas.getContext("2d");
@@ -221,25 +224,71 @@ ctx.fillText(
 
 const drawText = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = colorInput.value;
+
+  // Set font properties
   ctx.font = `${fontSizeInput.value}pt ${fontSelect.value}`;
-  ctx.fillText(
-    inputting.value || defaultText,
-    canvas.width / 2 / window.devicePixelRatio,
-    canvas.height / 2 / window.devicePixelRatio
-  );
+  
+  // Handle special font styles
+  if (fontStyle.value === "neon") {
+    // Draw white outline
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 6 // Adjust the width of the outline
+    ctx.strokeText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+
+    // Create a multiple-layer shadow effect
+    const shadowColors = ["#fff", "#fff", "#fff", "rgb(217, 0, 255)", "rgb(217, 0, 255)", "rgb(217, 0, 255)", "rgb(217, 0, 255)"];
+    const shadowBlurs = [7, 10, 21, 42, 82, 92, 102, 151];
+
+    shadowColors.forEach((color, index) => {
+      ctx.shadowColor = color;
+      ctx.shadowBlur = shadowBlurs[index];
+      ctx.fillStyle = colorInput.value;
+      ctx.fillText(
+        inputting.value || defaultText,
+        canvas.width / 2 / window.devicePixelRatio,
+        canvas.height / 2 / window.devicePixelRatio
+      );
+    });
+
+  } else if (fontStyle.value === "flame") {
+    // Create flame gradient
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0, "red");
+    gradient.addColorStop(0.5, "yellow");
+    gradient.addColorStop(1, "orange");
+    ctx.fillStyle = gradient;
+    ctx.shadowColor = "orange";
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+  } else {
+    ctx.shadowBlur = 0; // Remove shadow for other styles
+    ctx.fillStyle = colorInput.value;
+    ctx.fillText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+  }
 };
 
+// Event listeners
 fontSizeInput.addEventListener("input", drawText);
 colorInput.addEventListener("input", drawText);
 inputting.addEventListener("input", drawText);
 fontSelect.addEventListener("change", drawText);
+fontStyle.addEventListener("change", drawText);
 
 resetButton.addEventListener("click", () => {
   inputting.value = defaultText;
   fontSizeInput.value = defaultFontSize;
   colorInput.value = defaultColor;
   fontSelect.value = defaultFont;
+  fontStyle.value = "none"; // Reset font style to none
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = defaultColor;
