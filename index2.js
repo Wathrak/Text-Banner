@@ -260,32 +260,32 @@ resetButton.addEventListener("click", () => {
 //   }, 10);
 // }
 
-function LeftToRight() {
-  let step = 0;
-  let steps = canvas.width / 2 / window.devicePixelRatio + 50;
+// function LeftToRight() {
+//   let step = 0;
+//   let steps = canvas.width / 2;
 
-  // step++;
-  // ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // ctx.save();
-  // ctx.translate(step, y / 2);
-  // drawText();
-  // ctx.restore();
-  // if (step = steps)
-  //   step = -50;
-  // if (step < steps)
-  //   var t = setTimeout('LeftToRight()', 5);
-  // console.log(step.value);
+//   // step++;
+//   // ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   // ctx.save();
+//   // ctx.translate(step, y / 2);
+//   // drawText();
+//   // ctx.restore();
+//   // if (step = steps)
+//   //   step = -50;
+//   // if (step < steps)
+//   //   var t = setTimeout('LeftToRight()', 5);
+//   // console.log(step.value);
 
-  step++;
-  ctx.translate(step, canvas.height / 2 / window.devicePixelRatio);
-  if (step == steps)
-    step = -50;
-  else if (step < steps)
-    var t = setTimeout('LeftToRight()', 1000);
-  console.log(step);
-  console.log(steps);
-  console.log(canvas.width / 2 / window.devicePixelRatio);
-}
+//   ctx.translate(step, canvas.height / 2);
+//   step++;
+//   if (step == steps)
+//     step = -50;
+//   else if (step < steps)
+//     setTimeout('LeftToRight()', 1000);
+//   console.log(step);
+//   console.log(steps);
+//   console.log(canvas.width / 2);
+// }
 
 // function TopToBottom() {
 //   let step = 0;
@@ -346,3 +346,4 @@ anime.addEventListener("change", function(){
 });
 
 console.log(x);
+console.log(y)
