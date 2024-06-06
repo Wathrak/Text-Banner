@@ -1,6 +1,6 @@
 let element = document.documentElement;
 let isFullscreen = false;
-let size = 200;
+let size = 50;
 let speed = 2;
 
 // Start & Stop Animation
@@ -201,9 +201,11 @@ const inputting = document.getElementById("textinput");
 const resetButton = document.getElementById("reset-btn");
 const canvas = document.getElementById("p-1");
 const ctx = canvas.getContext("2d");
+var x = canvas.width / 2 / window.devicePixelRatio;
+var y = canvas.height / 2 / window.devicePixelRatio;
 
 let defaultText = "Welcome!!";
-let defaultFontSize = 100; // Adjusted to match the initial canvas font size
+let defaultFontSize = 50; // Adjusted to match the initial canvas font size
 let defaultColor = "#ffffff"; // Default white color
 let defaultFont = "Arial";
 
@@ -249,4 +251,61 @@ resetButton.addEventListener("click", () => {
     canvas.width / 2 / window.devicePixelRatio,
     canvas.height / 2 / window.devicePixelRatio
   );
+});
+
+// function scroll() {
+//   setInterval(() => {
+//     if (x - ctx.measureText(inputting.value).width / 2 >= x)
+//       x = - ctx.clientWidth / window.devicePixelRatio
+//   }, 10);
+// }
+
+// function LeftToRight() {
+//   var step = 0;
+//   var steps = canvas.width + 50;
+
+//   step++;
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   ctx.save();
+//   ctx.translate(step, canvas.height /2);
+//   drawText();
+//   ctx.restore();
+//   if (step = steps)
+//     step = -50;
+//   if (step < steps)
+//     var t = setTimeout('LeftToRight()', delay);
+// }
+
+function scroll_animation() {
+  // Looping animation
+  requestAnimationFrame(scroll_animation); // loop
+
+  // Wrap around if x exceeds canvas width
+  if (x - ctx.measureText(inputting.value).width / 2 > canvas.width) {
+    x = -(canvas.width + ctx.measureText(inputting.value).width) / 2;
+  }
+
+  x += 1;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawText();
+}
+
+let anime = document.getElementById("animation-style");
+
+anime.addEventListener("change", function(){
+  let animating = anime.value;
+
+  switch (animating) {
+    case "run":
+      scroll_animation();
+      console.log("It works");
+      console.log(scroll_animation());
+      break;
+    case "flicker":
+      console.log("It works");
+      break;
+    default:
+      break;
+  }
 });
