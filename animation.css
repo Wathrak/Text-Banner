@@ -171,7 +171,7 @@
 }
 
 
-
+/* Mobile resolution */
 @media screen and (max-width: 1284px){
   #div-1 {
     position: relative;

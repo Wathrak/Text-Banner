@@ -1,6 +1,6 @@
 let element = document.documentElement;
 let isFullscreen = false;
-let size = 200;
+let size = 150;
 let speed = 2;
 
 // load Content
@@ -168,7 +168,7 @@ function closeFullscreen() {
 
 // Default Text style
 const defaultText = 'Welcome!!';
-const defaultFontSize = '200px';
+const defaultFontSize = '150px';
 const defaultColor = '#ff0000'; // Default red color
 const defaultFontFamily = 'timenews';
 
@@ -186,7 +186,7 @@ function resetCustomization() {
     const bubble = document.getElementById('span-div');
 
     // Reset input values
-    document.getElementById('font-input').value = 200;
+    document.getElementById('font-input').value = 150;
     document.getElementById('coloring').value = defaultColor;
     document.getElementById('font').value = '1';
     document.getElementById('font-style').value = '1';
@@ -197,7 +197,7 @@ function resetCustomization() {
     // Remove animations
     div.classList.remove('run');
     div.classList.remove('flicker');
-    size = 200;
+    size = 150;
     speed = 2;
 
     // When reset, reset bg to black
