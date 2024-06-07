@@ -453,6 +453,25 @@ function down() {
   requestAnimationFrame(down);
 }
 
+var angleInDegrees = 0;
+function rotation(){
+  if (!running) return;
+    angleInDegrees += 1;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.save();
+
+    ctx.translate(canvas.width / 2 / window.devicePixelRatio, canvas.height / 2 / window.devicePixelRatio);
+    ctx.rotate(angleInDegrees * Math.PI / 180);
+
+    ctx.fillText(inputting.value || defaultText, 0, 0);
+
+    ctx.restore();
+
+    requestAnimationFrame(rotation);
+}
+
 function resetPosition() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Reset Position
@@ -469,31 +488,35 @@ anime.addEventListener("change", function(){
   
   switch (animating) {
     case 'none':
-      resetPosition();
-      running = false;
-      break;
+        resetPosition();
+        running = false;
+        break;
     case "run":
-      resetPosition();
-      running = true;
-      run();
-      break;
+        resetPosition();
+        running = true;
+        run();
+        break;
     case "down":
         resetPosition();
         running = true;
         down();
         break;
+    case "rotate":
+        resetPosition();
+        running = true;
+        rotation();
+        break;
     case "flicker":
-      resetPosition();
-      canvas.classList.add('flicker');
-    
-      break;
+        resetPosition();
+        canvas.classList.add('flicker');
+        break;
     case 'scale':
-      canvas.classList.add('scale');
-      break;
-      case 'zigzag':
-      canvas.classList.add('zigzag');
-      break;
+        canvas.classList.add('scale');
+        break;
+    case 'zigzag':
+        canvas.classList.add('zigzag');
+        break;
     default:
-      break;
+        break;
   }
 });
