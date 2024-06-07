@@ -337,7 +337,7 @@ function run() {
 
 function down() {
   if (!running) return;
-  x = 650
+  x = 650;
   var textLength = ctx.measureText(inputting.value);
   var textHeight = textLength.actualBoundingBoxAscent + textLength.actualBoundingBoxDescent;
 
