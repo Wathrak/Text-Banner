@@ -448,7 +448,7 @@ function down() {
   y += 4;
   // If the text moves off the canvas, reset the position
   if (y > canvas.height + textHeight / 2) {
-      y = -textHeight;
+      y = -textHeight / 2;
   }
   requestAnimationFrame(down);
 }
