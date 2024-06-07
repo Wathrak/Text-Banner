@@ -9,6 +9,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const div = document.getElementById("div-1");
   const p = document.getElementById("p-1");
   const container = document.getElementById("screen");
+  const main = document.getElementById('main');
+
+  const bubble = document.getElementById('span-div');
 
   const animation = document.querySelector("#start-btn");
   const fullscreen = document.querySelector("#fullscreen-btn");
@@ -21,6 +24,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const frameSelect = document.getElementById("frame");
   const increase = document.querySelector("#increase");
   const decrease = document.querySelector("#decrease");
+
 
   // Initialize input values
   fontSizeInput.value = size;
