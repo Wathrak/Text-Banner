@@ -227,7 +227,6 @@ const drawText = () => {
 
   // Set font properties
   ctx.font = `${fontSizeInput.value}pt ${fontSelect.value}`;
-  
   // Handle special font styles
   if (fontStyle.value === "neon") {
     // Draw white outline
@@ -315,11 +314,11 @@ function run() {
     if (!running) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Draw the text at the new position
-    ctx.fillText(inputting.value || defaultText, x, y);
+    ctx.fillText(inputting.value || defaultText, x, canvas.height / 2 / window.devicePixelRatio);
     x += 4;
     // If the text moves off the canvas, reset the position
     if (x > canvas.width + ctx.measureText(inputting.value).width/2) {
-        x = -ctx.measureText(inputting.value).width;
+        x = -ctx.measureText(inputting.value).width / 2;
     }
     requestAnimationFrame(run);
 }
@@ -331,16 +330,57 @@ function resetPosition() {
 }
 
 function down() {
-  y = 0;
+  if(!running) return;
+
+  var textLength = ctx.measureText(inputting.value);
+  var textHeight = textLength.actualBoundingBoxAscent + textLength.actualBoundingBoxDescent;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Draw the text at the new position
-  ctx.fillText(inputting.value || defaultText, canvas.width, y);
+  ctx.fillText(inputting.value || defaultText, canvas.width / 2 / window.devicePixelRatio, y);
   y += 4;
   // If the text moves off the canvas, reset the position
-  if (y > canvas.height + ctx.measureText(inputting.value).height/2) {
-      y = -ctx.measureText(inputting.value).height;
+  if (y > canvas.height + textHeight) {
+      y = -textHeight;
   }
   requestAnimationFrame(down);
+}
+
+var angleInDegrees = 0;
+// function rotation() {
+//   setInterval(function(){
+//     if (!running) return;
+//     angleInDegrees += 5;
+
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+//     ctx.save();
+
+//     ctx.translate(canvas.width / 2 / window.devicePixelRatio, canvas.height / 2 / window.devicePixelRatio);
+//     ctx.rotate(angleInDegrees * Math.PI / 180);
+
+//     ctx.fillText(inputting.value || defaultText, 0, 0);
+
+//     ctx.restore();
+//   }, 15);
+// }
+
+function rotation(){
+  if (!running) return;
+    angleInDegrees += 1;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.save();
+
+    ctx.translate(canvas.width / 2 / window.devicePixelRatio, canvas.height / 2 / window.devicePixelRatio);
+    ctx.rotate(angleInDegrees * Math.PI / 180);
+
+    ctx.fillText(inputting.value || defaultText, 0, 0);
+
+    ctx.restore();
+
+    requestAnimationFrame(rotation);
 }
 
 let anime = document.getElementById("animation-style");
@@ -362,13 +402,19 @@ anime.addEventListener("change", function(){
       run();
       break;
     case "down":
-        resetPosition();
-        down();
-        break;
+      resetPosition();
+      running = true;
+      down();
+      break;
+    case "rotator":
+      resetPosition();
+      running = true;
+      rotation();
+      break;
     case "flicker":
       resetPosition();
       canvas.classList.add('flicker');
-    
+      console.log(textHeight);
       break;
     case 'scale':
       canvas.classList.add('scale');
