@@ -87,6 +87,34 @@ window.addEventListener("DOMContentLoaded", (event) => {
         canvas.classList.add("lobster");
     }
   });
+  
+  // Font family
+  fontSelect.addEventListener("change", function () {
+    const selectedFont = fontSelect.value;
+    const p = document.getElementById("p-1");
+    
+    // Remove existing font classes
+    p.classList.remove(
+      "polkadot",
+      "lobster",
+      "montserrat",
+      "courier",
+      "franklin",
+      "jacquard",
+      "dancingScript",
+      "danfo",
+      "jacquard24",
+      "shadows-into-light",
+      "koulen",
+      "chenla",
+      "bayon",
+      "sleokchher",
+      "timesNew"
+    );
+  
+    // Add class for the selected font
+    p.classList.add(selectedFont);
+  });
 
   // Font Style
   fontStyle.addEventListener("change", function () {
