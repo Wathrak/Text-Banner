@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Frame style change
   frameSelect.addEventListener('change', function() {
     container.style.backgroundImage = '';
-    container.classList.remove('rainbow');
+    container.classList.remove('rainbow', 'cloud', 'strip');
     bubble.style.display = 'none';
     removeSnowflakes();
     if (frameSelect.value == 'brick') {
@@ -63,11 +63,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
         container.classList.add('rainbow');
     } else if (frameSelect.value == 'bubble') {
         bubble.style.display = 'flex';
-        console.log(bubble.value);
     } else if (frameSelect.value === "snow") {
      container.style.backgroundImage = "";
      addSnowflakes();
-    } else if (frameSelect.value === "none") {
+    } else if (frameSelect.value == 'cloud') {
+      container.classList.add('cloud');
+    } else if (frameSelect.value == 'strip') {
+      container.classList.add('strip');
+    } else if (frameSelect.value == "none") {
       container.style.backgroundImage = "";
       container.style.backgroundColor = bgColorInput.value || "black";
       removeSnowflakes();
@@ -270,6 +273,7 @@ ctx.fillText(
 //     canvas.height / 2 / window.devicePixelRatio 
 //   );
 // }
+
 const drawText = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -280,7 +284,7 @@ const drawText = () => {
   if (fontStyle.value === "neon") {
     // Draw white outline
     ctx.strokeStyle = "#ffffff";
-    ctx.lineWidth = 6 // Adjust the width of the outline
+    ctx.lineWidth = 6; // Adjust the width of the outline
     ctx.strokeText(
       inputting.value || defaultText,
       canvas.width / 2 / window.devicePixelRatio,
@@ -288,7 +292,8 @@ const drawText = () => {
     );
 
     // Create a multiple-layer shadow effect
-    const shadowColors = ["#fff", "#fff", "#fff", "rgb(217, 0, 255)", "rgb(217, 0, 255)", "rgb(217, 0, 255)", "rgb(217, 0, 255)"];
+    const shadowColors = ["#fff", "#fff", "#fff", 
+                          "rgb(217, 0, 255)", "rgb(217, 0, 255)", "rgb(217, 0, 255)", "rgb(217, 0, 255)"];
     const shadowBlurs = [7, 10, 21, 42, 82, 92, 102, 151];
 
     shadowColors.forEach((color, index) => {
@@ -313,7 +318,66 @@ const drawText = () => {
     ctx.shadowBlur = 20;
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0;
+  } else if (fontStyle.value === "butter") {
+    // Create butter effect by drawing multiple shadows manually
+    ctx.fillStyle = colorInput.value;
+    ctx.fillText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+
+    const shadowColors = ["#90B1E0", "#6868AC", "#EF5097", , "#FF80BF", "#FFD662", "#FFB650"];
+    shadowColors.forEach((color, index) => {
+      ctx.fillStyle = color;
+      ctx.fillText(
+        inputting.value || defaultText,
+        canvas.width / 2 / window.devicePixelRatio - (index - 7) * 5,
+        canvas.height / 2 / window.devicePixelRatio - (index - 7) * 5,
+      );
+    });
+
+    // Draw the main text over the shadows
+    ctx.fillStyle = colorInput.value;
+    ctx.fillText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+  } else if (fontStyle.value === "t3d") {
+    // Apply 3D text shadow
+    const shadowOffsets = [
+      {x: 1, y: 0, color: '#8da1ff'}, {x: -1, y: 2, color: '#c0cbff'},
+      {x: -2, y: 1, color: '#8da1ff'}, {x: -2, y: 3, color: '#c0cbff'},
+      {x: -3, y: 2, color: '#8da1ff'}, {x: -3, y: 4, color: '#c0cbff'},
+      {x: -4, y: 3, color: '#8da1ff'}, {x: -4, y: 5, color: '#c0cbff'},
+      {x: -5, y: 4, color: '#8da1ff'}, {x: -5, y: 6, color: '#c0cbff'},
+      {x: -6, y: 5, color: '#8da1ff'}, {x: -6, y: 7, color: '#c0cbff'},
+      {x: -7, y: 6, color: '#8da1ff'}, {x: -7, y: 8, color: '#c0cbff'},
+      {x: -8, y: 7, color: '#8da1ff'}, {x: -8, y: 9, color: '#c0cbff'}
+    ];
+
+    shadowOffsets.forEach((shadow, index) => {
+      ctx.fillStyle = shadow.color;
+      ctx.fillText(
+        inputting.value || defaultText,
+        (canvas.width / 2 / window.devicePixelRatio) + shadow.x,
+        (canvas.height / 2 / window.devicePixelRatio) + shadow.y
+      );
+    });
+
+    // Draw the main text with the selected font
+    ctx.font = `${fontSizeInput.value}pt ${fontSelect.value}`;
+    ctx.fillStyle = colorInput.value;
+    ctx.fillText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+  } else if (fontStyle.value === "paper") {
+    // apply the code for paper text style to work
   } else {
+    // For other font styles, handle them as before
     ctx.shadowBlur = 0; // Remove shadow for other styles
     ctx.fillStyle = colorInput.value;
     ctx.fillText(
