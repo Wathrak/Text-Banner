@@ -47,17 +47,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   // Frame style change
-  frameSelect.addEventListener("change", function () {
-    if (frameSelect.value === "brick") {
-      container.style.backgroundImage = "url(brick.jpg)";
-      container.style.backgroundSize = "cover";
+  frameSelect.addEventListener('change', function() {
+    container.style.backgroundImage = '';
+    container.classList.remove('rainbow');
+    bubble.style.display = 'none';
+    removeSnowflakes();
+    if (frameSelect.value == 'brick') {
+        container.style.backgroundImage = 'url(brick.jpg)';
+        container.style.backgroundSize = 'cover';
+    } else if (frameSelect.value == 'rainbow') {
+        container.classList.add('rainbow');
+    } else if (frameSelect.value == 'bubble') {
+        bubble.style.display = 'flex';
+    } else if (frameSelect.value === "snow") {
+     container.style.backgroundImage = "";
+     addSnowflakes();
     } else if (frameSelect.value === "none") {
       container.style.backgroundImage = "";
       container.style.backgroundColor = bgColorInput.value || "black";
-    } else {
-      container.style.backgroundImage = "";
+      removeSnowflakes();
     }
-  });
+});
 
   // Font Family
   font.addEventListener("change", function () {
@@ -193,6 +203,35 @@ function resetCustomization() {
   container.style.backgroundImage = "";
 }
 
+// // snow flake function 
+// function addSnowflakes() {
+//   const snowContainer = document.getElementById("snow-container");
+//   snowContainer.innerHTML = ""; // Clear any existing snowflakes
+
+//   for (let i = 0; i < 200; i++) { // Adjust the number of snowflakes as needed
+//     const snowflake = document.createElement("div");
+//     snowflake.classList.add("snowflake");
+//     snowflake.style.left = Math.random() * 100 + "vw";
+//     snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+//     snowflake.style.opacity = Math.random();
+//     snowflake.style.width = snowflake.style.height = Math.random() * 7 + 3 + "px";
+//     snowContainer.appendChild(snowflake);
+//   }
+// }
+
+// function removeSnowflakes() {
+//   const snowContainer = document.getElementById("snow-container");
+//   snowContainer.innerHTML = ""; // Clear the snowflakes
+// }
+
+//   // Set default text styles
+//   p.style.fontSize = defaultFontSize;
+//   p.style.color = defaultColor;
+//   p.classList.add(defaultFontFamily);
+//   p.textContent = defaultText;
+
+
+  //sdadsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 const container = document.getElementById("screen");
 const fontSizeInput = document.getElementById("font-input");
