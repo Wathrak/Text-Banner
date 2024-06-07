@@ -1,7 +1,3 @@
-let element = document.documentElement;
-let isFullscreen = false;
-let size = 200;
-let speed = 2;
 
 // Start & Stop Animation
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -63,15 +59,33 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
-  // Font Family
-  font.addEventListener("change", function () {
-    if (font.value == "polkadot") {
-      p.classList.remove("lobster");
-      p.classList.add("polkadot");
-    } else if (font.value == "lobster") {
-      p.classList.remove("polkadot");
-      p.classList.add("lobster");
-    }
+  // Font family
+
+  fontSelect.addEventListener("change", function () {
+    const selectedFont = fontSelect.value;
+    const p = document.getElementById("p-1");
+    
+    // Remove existing font classes
+    p.classList.remove(
+      "polkadot",
+      "lobster",
+      "montserrat",
+      "courier",
+      "franklin",
+      "jacquard",
+      "dancingScript",
+      "danfo",
+      "jacquard24",
+      "shadows-into-light",
+      "koulen",
+      "chenla",
+      "bayon",
+      "sleokchher",
+      "timesNew"
+    );
+  
+    // Add class for the selected font
+    p.classList.add(selectedFont);
   });
 
   // Font Style
@@ -155,43 +169,43 @@ function closeFullscreen() {
   document.body.classList.remove("fullscreen");
 }
 
-function resetCustomization() {
-  // Reset the text style
-  const paragraph = document.getElementById("p-1");
-  const div = document.getElementById("div-1");
-  const container = document.getElementById("screen");
-  paragraph.style.fontSize = defaultFontSize;
-  paragraph.style.color = defaultColor;
-  paragraph.className = "p-1"; // Reset classes
-  paragraph.classList.add(defaultFontFamily);
-  paragraph.textContent = defaultText; // Reset text content
-  const pctx = paragraph.getContext("2d");
-  pctx.clearRect(0, 0, canvas.width, canvas.height);
-  pctx.fillText(
-    "Welcome!!",
-    canvas.width / 2 / window.devicePixelRatio,
-    canvas.height / 1.7 / window.devicePixelRatio
-  );
+// function resetCustomization() {
+//   // Reset the text style
+//   const paragraph = document.getElementById("p-1");
+//   const div = document.getElementById("div-1");
+//   const container = document.getElementById("screen");
+//   paragraph.style.fontSize = defaultFontSize;
+//   paragraph.style.color = defaultColor;
+//   paragraph.className = "p-1"; // Reset classes
+//   paragraph.classList.add(defaultFontFamily);
+//   paragraph.textContent = defaultText; // Reset text content
+//   const pctx = paragraph.getContext("2d");
+//   pctx.clearRect(0, 0, canvas.width, canvas.height);
+//   pctx.fillText(
+//     "Welcome!!",
+//     canvas.width / 2 / window.devicePixelRatio,
+//     canvas.height / 1.7 / window.devicePixelRatio
+//   );
 
-  // Reset input values
-  document.getElementById("font-input").value = 100;
-  document.getElementById("coloring").value = defaultColor;
-  document.getElementById("font").value = "1";
-  document.getElementById("font-style").value = "1";
-  document.getElementById("frame").value = "1"; // Reset to default "Frame Style"
-  document.getElementById("bgcoloring").value = "#000000"; // Reset background color picker
-  document.getElementById("animation-style").value = "1";
+//   // Reset input values
+//   document.getElementById("font-input").value = 100;
+//   document.getElementById("coloring").value = defaultColor;
+//   document.getElementById("font").value = "1";
+//   document.getElementById("font-style").value = "1";
+//   document.getElementById("frame").value = "1"; // Reset to default "Frame Style"
+//   document.getElementById("bgcoloring").value = "#000000"; // Reset background color picker
+//   document.getElementById("animation-style").value = "1";
 
-  // Remove animations
-  div.classList.remove("run");
-  div.classList.remove("flicker");
-  size = 200;
-  speed = 2;
+//   // Remove animations
+//   div.classList.remove("run");
+//   div.classList.remove("flicker");
+//   size = 200;
+//   speed = 2;
 
-  // When reset, reset bg to black
-  container.style.backgroundColor = "black";
-  container.style.backgroundImage = "";
-}
+//   // When reset, reset bg to black
+//   container.style.backgroundColor = "black";
+//   container.style.backgroundImage = "";
+// }
 
 
 
@@ -322,9 +336,61 @@ const drawText = () => {
       canvas.width / 2 / window.devicePixelRatio,
       canvas.height / 2 / window.devicePixelRatio
     );
-  } else if (fontStyle.value === "paper") {
-    // apply the code for paper text style to work
-  } else {
+  // } else if (fontStyle.value === "paper") {
+  //   // Create paper gradient
+  //   const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  //   gradient.addColorStop(0.19, "#186cb8");
+  //   gradient.addColorStop(0.2, "transparent");
+  //   gradient.addColorStop(0.4, "#2a9a9f");
+  //   gradient.addColorStop(0.8, "transparent");
+  //   gradient.addColorStop(0.8, "transparent");
+  //   gradient.addColorStop(0.6, "#f1b211");
+  //   gradient.addColorStop(0.79, "transparent");
+  //   gradient.addColorStop(0.8, "#e83611");
+  //   gradient.addColorStop(1, "#f9002f");
+
+  //   ctx.fillStyle = gradient;
+  //   ctx.fillText(
+  //     inputting.value || defaultText,
+  //     canvas.width / 2 / window.devicePixelRatio,
+  //     canvas.height / 2 / window.devicePixelRatio
+  //   );
+   }else if (fontStyle.value === "pop") {
+    // Pop text style
+    ctx.shadowColor = "#ff1f8f";
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 8;
+    ctx.shadowOffsetY = 8;
+
+    // Draw shadow text first
+    ctx.fillStyle = colorInput.value;
+    ctx.fillText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+
+    // Remove shadow for the stroke and main text
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+
+    // Draw white stroke
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 5;
+    ctx.strokeText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+
+    // Draw the main text
+    ctx.fillStyle = colorInput.value;
+    ctx.fillText(
+      inputting.value || defaultText,
+      canvas.width / 2 / window.devicePixelRatio,
+      canvas.height / 2 / window.devicePixelRatio
+    );
+  }  else {
     // For other font styles, handle them as before
     ctx.shadowBlur = 0; // Remove shadow for other styles
     ctx.fillStyle = colorInput.value;
@@ -345,9 +411,9 @@ fontStyle.addEventListener("change", drawText);
 
 resetButton.addEventListener("click", () => {
   inputting.value = defaultText;
-  fontSizeInput.value = defaultFontSize;
+  fontSizeInput.value = defaultFontSize; // Set font size input to defaultFontSize
   colorInput.value = defaultColor;
-  fontSelect.value = defaultFont;
+  fontSelect.value = "Fonts"; // Reset font select to default option
   fontStyle.value = "none"; // Reset font style to none
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -359,5 +425,4 @@ resetButton.addEventListener("click", () => {
     canvas.height / 2 / window.devicePixelRatio
   );
 });
-
 
