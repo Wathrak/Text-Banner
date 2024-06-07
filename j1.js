@@ -290,6 +290,11 @@ resetButton.addEventListener("click", () => {
   fontSelect.value = defaultFont;
   fontStyle.value = "none"; // Reset font style to none
 
+  canvas.classList.remove('flicker');
+  canvas.classList.remove('scale');
+  canvas.classList.remove('zigzag');
+  running = false;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = defaultColor;
   ctx.font = `${defaultFontSize}pt ${defaultFont}`;
@@ -303,12 +308,14 @@ resetButton.addEventListener("click", () => {
 // Text Position
 var x = 0;
 var y = 470;
+let running = false;
 
 // Animate Text
 function run() {
+    if (!running) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Draw the text at the new position
-    ctx.fillText(inputting.value, x, y);
+    ctx.fillText(inputting.value || defaultText, x, y);
     x += 4;
     // If the text moves off the canvas, reset the position
     if (x > canvas.width + ctx.measureText(inputting.value).width/2) {
@@ -317,11 +324,17 @@ function run() {
     requestAnimationFrame(run);
 }
 
+function resetPosition() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Reset Position
+  ctx.fillText(inputting.value || defaultText, canvas.width / 2 / window.devicePixelRatio, canvas.height / 2 / window.devicePixelRatio);
+}
+
 function down() {
   y = 0;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Draw the text at the new position
-  ctx.fillText(inputting.value, canvas.width, y);
+  ctx.fillText(inputting.value || defaultText, canvas.width, y);
   y += 4;
   // If the text moves off the canvas, reset the position
   if (y > canvas.height + ctx.measureText(inputting.value).height/2) {
@@ -334,15 +347,28 @@ let anime = document.getElementById("animation-style");
 anime.addEventListener("change", function(){
   let animating = anime.value;
 
+  canvas.classList.remove('flicker');
+  canvas.classList.remove('scale');
+  canvas.classList.remove('zigzag');
+  
   switch (animating) {
+    case 'none':
+      resetPosition();
+      running = false;
+      break;
     case "run":
+      resetPosition();
+      running = true;
       run();
       break;
     case "down":
+        resetPosition();
         down();
         break;
     case "flicker":
+      resetPosition();
       canvas.classList.add('flicker');
+    
       break;
     case 'scale':
       canvas.classList.add('scale');
@@ -354,23 +380,3 @@ anime.addEventListener("change", function(){
       break;
   }
 });
-
-
-// const start = document.getElementById('animation-style');
-// start.addEventListener("change", () => {
-//     if (a == 'run') {
-//         // run();
-//         canvas.classList.add('run');
-//         console.log(run());
-//     }
-//     else if (a == 'flicker') {
-//         canvas.classList.add('flicker');
-//     }
-//     else if (a == 'scale') {
-//         canvas.classList.add('scale');
-//     }
-//     else if (a == 'zigzag') {
-//         canvas.classList.add('zigzag');
-//     }
-
-// });
