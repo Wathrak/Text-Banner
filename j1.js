@@ -84,12 +84,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
-  animation.addEventListener("click", function () {
-    console.log(a);
-    a = animationStyle.value;
-    div.classList.toggle(animationStyle.value);
+  // animation.addEventListener("click", function () {
+  //   a = animationStyle.value;
+  //   div.classList.toggle(animationStyle.value);
     
-  });
+  // });
 
   fullscreen.addEventListener("click", function () {
     div.classList.add("run");
@@ -222,6 +221,18 @@ ctx.fillText(
   canvas.height / 2 / window.devicePixelRatio
 );
 
+// Function to check if the device is mobile
+// function isMobileDevice() {
+//   return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+// }
+// if (isMobileDevice()) {
+//   console.log("hello world");
+//   ctx.fillText(
+//     defaultText,
+//     canvas.width / 2 / window.devicePixelRatio,
+//     canvas.height / 2 / window.devicePixelRatio 
+//   );
+// }
 const drawText = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -324,23 +335,26 @@ function run() {
     requestAnimationFrame(run);
 }
 
+function down() {
+  x = 650
+  var textLength = ctx.measureText(inputting.value);
+  var textHeight = textLength.actualBoundingBoxAscent + textLength.actualBoundingBoxDescent;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Draw the text at the new position
+  ctx.fillText(inputting.value || defaultText, x, y);
+  y += 4;
+  // If the text moves off the canvas, reset the position
+  if (y > canvas.height + textHeight / 2) {
+      y = -textHeight;
+  }
+  requestAnimationFrame(down);
+}
+
 function resetPosition() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Reset Position
   ctx.fillText(inputting.value || defaultText, canvas.width / 2 / window.devicePixelRatio, canvas.height / 2 / window.devicePixelRatio);
-}
-
-function down() {
-  y = 0;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // Draw the text at the new position
-  ctx.fillText(inputting.value || defaultText, canvas.width, y);
-  y += 4;
-  // If the text moves off the canvas, reset the position
-  if (y > canvas.height + ctx.measureText(inputting.value).height/2) {
-      y = -ctx.measureText(inputting.value).height;
-  }
-  requestAnimationFrame(down);
 }
 
 let anime = document.getElementById("animation-style");

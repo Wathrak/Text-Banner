@@ -177,9 +177,9 @@ button {
 } */
 
 #reset {
-    /* position: relative;
-    left: 20%;
-    margin-top: 70%; */
+    /* position: relative; */
+    /* left: 20%; */
+    margin-top: 50%;
     text-align: center;
 }
 
@@ -234,5 +234,11 @@ button {
     }
     #start {
         margin-top: 3%;
+    }
+    #reset {
+        margin-top: 3%;
+    }
+    #div-1 {
+        
     }
 }

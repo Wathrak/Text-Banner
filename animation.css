@@ -40,3 +40,27 @@
 .zigzag {
   animation: zigzag 10s linear infinite;
 }
+
+
+
+
+/* Mobile resolution */
+@media screen and (max-width: 1284px){
+  #div-1 {
+    position: relative;
+  }
+
+  @keyframes snowfall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(200vh);
+    }
+  }
+
+  @keyframes bubble {
+    0% { transform: translateY(200vh) scale(0); }
+    100% { transform: translateY(-10vh) scale(1); }
+  }
+}
