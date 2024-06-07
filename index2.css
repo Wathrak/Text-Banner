@@ -8,6 +8,7 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 #main {
@@ -20,7 +21,9 @@ body {
     background-color: violet;
     display: block;
     z-index: 10;
+    order: 1;
 }
+
 #customization {
     text-align: center;
     font-size: x-large;
@@ -124,6 +127,10 @@ select {
     margin-bottom: 4%;
 }
 
+#btn-speed {
+    text-align: center;
+}
+
 #animation-speed {
     margin-left: 10%;
     font-size: larger;
@@ -146,18 +153,34 @@ button {
 #decrease {
     margin-left: 4%;
 }
-
+#fullscreen {
+    text-align: center;
+}
 #fullscreen-btn {
-    padding: 1% 5% 1% 5%;
-    position: relative;
-    left: 20%;
+    padding: 1% 7% 1% 7%;
+    /* position: relative;
+    left: 20%; */
 }
 
-
-#reset {
+#start {
+    margin-top: 50%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+/* 
+#start-btn {
+    padding: 1% 10% 1% 11%;
+    margin-bottom: 5%;
     position: relative;
     left: 20%;
-    margin-top: 40%; 
+    margin-top: 30%;
+} */
+
+#reset {
+    /* position: relative;
+    left: 20%;
+    margin-top: 70%; */
+    text-align: center;
 }
 
 #menu {
@@ -168,45 +191,48 @@ button {
     font-size: xx-large;
     position: absolute;
     top: 0%;
-    left: 17%;
+    left: 16%;
 }
 #menu:hover {
     cursor: pointer;
 }
 
 #screen {
-    width: auto;
-    height: auto;
     flex: 3;
     background-color: black;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    order: 2;
 }
 
-/* #start-btn {
-    padding: 1% 10% 1% 11%;
-    margin-bottom: 5%;
-    position: relative;
-    left: 20%;
-    margin-top: 30%;
-} */
-
-/* #p-1{
-    width: 300px;
-    height: 150px;
-    image-rendering: pixelated;
-} */
-
-/* #div-1{
+#p-1{
     width: auto;
     height: auto;
-    display: flex;
-    justify-content: center;
-} */
+}
 
-/* #screen.brick {
-    background-image: url('brick.jpg');
-    background-size: cover;
-} */
+@media screen and (max-width: 1284px) {
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: brown;
+    }
+    #main {
+        display: block;
+        overflow: auto;
+        width: 100vw;
+    }
+    #menu {
+        display: none;
+    }
+    #container {
+        background-color: brown;
+        order: 2;
+    }
+    #start {
+        margin-top: 3%;
+    }
+}
