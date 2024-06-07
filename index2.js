@@ -103,6 +103,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   fontStyle.addEventListener("change", function () {
     p.classList.remove("neon");
     p.classList.remove("flame");
+    p.classList.remove("text3d");
+    p.classList.remove("butter");
     p.classList.add(fontStyle.value);
   });
 
