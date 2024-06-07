@@ -404,6 +404,61 @@ const drawText = () => {
     );
   } else if (fontStyle.value === "paper") {
     // apply the code for paper text style to work
+  }
+  // } else if (fontStyle.value === "paper") {
+  //   // Create paper gradient
+  //   const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  //   gradient.addColorStop(0.19, "#186cb8");
+  //   gradient.addColorStop(0.2, "transparent");
+  //   gradient.addColorStop(0.4, "#2a9a9f");
+  //   gradient.addColorStop(0.8, "transparent");
+  //   gradient.addColorStop(0.8, "transparent");
+  //   gradient.addColorStop(0.6, "#f1b211");
+  //   gradient.addColorStop(0.79, "transparent");
+  //   gradient.addColorStop(0.8, "#e83611");
+  //   gradient.addColorStop(1, "#f9002f");
+
+  //   ctx.fillStyle = gradient;
+  //   ctx.fillText(
+  //     inputting.value || defaultText,
+  //     canvas.width / 2 / window.devicePixelRatio,
+  //     canvas.height / 2 / window.devicePixelRatio
+  //   );
+ else if (fontStyle.value === "pop") {
+  // Pop text style
+  ctx.shadowColor = "#ff1f8f";
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetX = 8;
+  ctx.shadowOffsetY = 8;
+
+  // Draw shadow text first
+  ctx.fillStyle = colorInput.value;
+  ctx.fillText(
+    inputting.value || defaultText,
+    canvas.width / 2 / window.devicePixelRatio,
+    canvas.height / 2 / window.devicePixelRatio
+  );
+
+  // Remove shadow for the stroke and main text
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+
+  // Draw white stroke
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 5;
+  ctx.strokeText(
+    inputting.value || defaultText,
+    canvas.width / 2 / window.devicePixelRatio,
+    canvas.height / 2 / window.devicePixelRatio
+  );
+
+  // Draw the main text
+  ctx.fillStyle = colorInput.value;
+  ctx.fillText(
+    inputting.value || defaultText,
+    canvas.width / 2 / window.devicePixelRatio,
+    canvas.height / 2 / window.devicePixelRatio
+  ); 
   } else {
     // For other font styles, handle them as before
     ctx.shadowBlur = 0; // Remove shadow for other styles
