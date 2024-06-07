@@ -336,6 +336,7 @@ function run() {
 }
 
 function down() {
+  if (!running) return;
   x = 650
   var textLength = ctx.measureText(inputting.value);
   var textHeight = textLength.actualBoundingBoxAscent + textLength.actualBoundingBoxDescent;
@@ -377,6 +378,7 @@ anime.addEventListener("change", function(){
       break;
     case "down":
         resetPosition();
+        running = true;
         down();
         break;
     case "flicker":
